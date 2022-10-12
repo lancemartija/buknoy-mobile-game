@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - square
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: Background5
     uniqueID: 2934883099
+    locked: 0
+  - name: infront of background
+    uniqueID: 2331634107
     locked: 0
   - name: Default
     uniqueID: 0
