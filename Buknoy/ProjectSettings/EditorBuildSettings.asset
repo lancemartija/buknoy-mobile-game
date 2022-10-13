@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Prologue.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: c8b89ae37e77c7e44bc7c3033b776270
   m_configObjects: {}
