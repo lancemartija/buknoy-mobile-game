@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Buknoy/Assets/SampleScenes/Navmesh/CarAI.asset
+Buknoy/Assets/SampleScenes/Scenes/CharacterThirdPersonAI/NavMesh.asset
+Buknoy/ProjectSettings/EditorBuildSettings.asset
+Buknoy/ProjectSettings/TimelineSettings.asset
+Buknoy/UserSettings/AndroidLogcatSettings.asset
+Buknoy/UserSettings/EditorUserSettings.asset
+Buknoy/UserSettings/Layouts/default-2021.dwlt
