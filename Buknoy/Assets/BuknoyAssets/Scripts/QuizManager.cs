@@ -15,7 +15,7 @@ public class QuizManager : MonoBehaviour
 
 
   [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel;
-  [SerializeField] private Text factText, scoreText, timeText, streakText;
+  [SerializeField] private Text factText, scoreText, timeText, streakText, finalscoreText, finalstreakText;
   [SerializeField] private float timeBetweenQuestions = 2f, timeLimit = 60;
   [SerializeField] private Text TrueAnswerText, FalseAnswerText;
   [SerializeField] private QuizUI quizui;
@@ -25,21 +25,23 @@ public class QuizManager : MonoBehaviour
   public Text ScoreText {get {return scoreText;}}
   public Text TimeText {get {return timeText;}}
   public Text StreakText {get {return streakText;}}
+  public Text FinalScoreText {get {return finalscoreText;}}
+  public Text FinalStreakText {get {return finalstreakText;}}
 
   public int scoreCount = 0, streakCount = 0;
   private float currentTimer;
 
-  public GameStatus gamestatus = GameStatus.Playing;
+  public GameStatus gamestatus = GameStatus.Menu;
 
   public GameObject GameOverPanel {get {return gameoverPanel;}}
 
-  public void Start()
+  public void StartGame(int index)
   {
     scoreCount = 0;
     streakCount = 0;
     currentTimer = timeLimit;
 
-   unansweredQuestions = quizData[0].questions.ToList<Question>();
+   unansweredQuestions = quizData[index].questions.ToList<Question>();
     gamestatus = GameStatus.Playing;
     SetCurrentQuestion();
   
@@ -89,7 +91,6 @@ public class QuizManager : MonoBehaviour
      {
       GameOver();
      }
-     //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
   }
 
@@ -149,14 +150,21 @@ public class QuizManager : MonoBehaviour
 
     gamestatus = GameStatus.Menu;
     GameOverPanel.SetActive(true);
+    FinalScoreText.text = "Final Score: " + scoreCount;
+    FinalStreakText.text = "Final Streak: " + streakCount;
+  }
+
+  public void RetryButton ()
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
   }
 }
 
 [System.Serializable]
 public enum GameStatus
 {
-  Menu,
-  Playing
+  Menu, //Timer will not count down while this GameStatus is active
+  Playing //Timer will count down while this GameStatus is active
 }
 
 [System.Serializable]
