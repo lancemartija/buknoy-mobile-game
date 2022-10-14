@@ -24154,7 +24154,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1901071077}
         m_TargetAssemblyTypeName: PauseMenuControls, Assembly-CSharp
-        m_MethodName: GoToMenu
+        m_MethodName: GoToMenuHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

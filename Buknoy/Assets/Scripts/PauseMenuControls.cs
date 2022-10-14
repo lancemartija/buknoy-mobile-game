@@ -17,8 +17,8 @@ public class PauseMenuControls : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
     }
-    public void GoToMenu()
+    public void GoToMenuHub()
     {
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("MenuHub");
     }
 }
