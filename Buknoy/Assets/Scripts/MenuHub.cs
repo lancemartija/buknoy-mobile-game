@@ -13,6 +13,7 @@ public class MenuHub : MonoBehaviour
     public void GoToQuiz()
     {
         SceneManager.LoadScene("Quizzes");
+        Time.timeScale = 1;
     }
     public void GoToLevelSelect()
     {
