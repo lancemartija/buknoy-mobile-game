@@ -15,10 +15,11 @@ public class QuizManager : MonoBehaviour
 
 
   [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel;
-  [SerializeField] public Button choiceTrue, choiceFalse, choiceA, choiceB, choiceC, choiceD;
-  [SerializeField] public Text TrueAnswerText, FalseAnswerText, FinalAnswerText;
+  [SerializeField] public Button choiceTrue, choiceFalse;
+  [SerializeField] public List<Button> choiceMultiple;
+  [SerializeField] public Text TrueAnswerText, FalseAnswerText, FinalAnswerText, RightAnswerText;
   [SerializeField] private Text factText, scoreText, timeText, streakText, finalscoreText, finalstreakText;
-  [SerializeField] private float timeBetweenQuestions = 2f, timeLimit = 60;
+  [SerializeField] private float timeBetweenQuestions = 2.5f, timeLimit = 60;
   [SerializeField] private QuizUI quizui;
   [SerializeField] private List<QuizQandA> quizData;
   [SerializeField] Animator animator;
@@ -26,10 +27,6 @@ public class QuizManager : MonoBehaviour
 
   public Button ChoiceTrue {get {return  choiceTrue;}}
   public Button ChoiceFalse {get {return  choiceFalse;}}
-  public Button ChoiceA {get {return  choiceA;}}
-  public Button ChoiceB {get {return  choiceB;}}
-  public Button ChoiceC {get {return  choiceC;}}
-  public Button ChoiceD {get {return  choiceD;}}
   public Text ScoreText {get {return scoreText;}}
   public Text TimeText {get {return timeText;}}
   public Text StreakText {get {return streakText;}}
@@ -50,6 +47,15 @@ public class QuizManager : MonoBehaviour
     streakCount = 0;
     quizChoice = index;
     currentTimer = timeLimit;
+
+    if (quizChoice > 1) // Multiple Choice Only
+    {
+       for (int i = 0; i < choiceMultiple.Count; i++)
+        {
+            Button localBtn = choiceMultiple[i];
+            localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
+        }
+    }
 
    unansweredQuestions = quizData[index].questions.ToList<Question>();
     gamestatus = GameStatus.Playing;
@@ -75,6 +81,19 @@ public class QuizManager : MonoBehaviour
 
     factText.text = currentQuestion.fact;
 
+    if (quizChoice > 1)
+    {
+       List<string> ansOptions = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
+
+        //assign options to respective option buttons
+        for (int i = 0; i < choiceMultiple.Count; i++)
+        {
+            //set the child text
+            choiceMultiple[i].GetComponentInChildren<Text>().text = ansOptions[i];
+            choiceMultiple[i].name = ansOptions[i];    //set the name of button
+        }
+    }
+
   }
 
   IEnumerator TransitiontoNextQuestion ()
@@ -85,7 +104,9 @@ public class QuizManager : MonoBehaviour
      {
         TrueAnswerText.text = "";
         FalseAnswerText.text = "";
-        Invoke("SetCurrentQuestion", 0.4f);
+        FinalAnswerText.text = "";
+        RightAnswerText.text = "";
+        Invoke("SetCurrentQuestion", 0.3f);
         animator.SetTrigger("Idle");
      }
      else
@@ -95,6 +116,7 @@ public class QuizManager : MonoBehaviour
 
   }
 
+  //True or False Only
   public void UserSelectTrue()
   {
     animator.SetTrigger("True"); 
@@ -141,6 +163,47 @@ public class QuizManager : MonoBehaviour
     StartCoroutine(TransitiontoNextQuestion());
   }
 
+  //Multiple Choice Only
+
+  void MultipleOnClick(Button btn)
+  {
+    if (gamestatus == GameStatus.Playing)
+    {
+       bool val = UserSelectMultiple(btn.name);
+       StartCoroutine(TransitiontoNextQuestion());
+    }
+  }
+
+
+  public bool UserSelectMultiple(string selectedChoice)
+  {
+    bool correct = false;
+
+    animator.SetTrigger("Multiple");
+    if (currentQuestion.correctAnswer == selectedChoice)
+    {
+      correct = true;
+      FinalAnswerText.text = "CORRECT!";
+      Debug.Log("CORRECT!");
+      streakCount++;
+      StreakText.text = "STREAK: " + streakCount;
+      scoreCount += 100 * streakCount;
+      ScoreText.text = "SCORE:" + scoreCount;
+    }
+    else
+    {
+      FinalAnswerText.text = "INCORRECT!";
+      RightAnswerText.text = "Correct answer was: " + currentQuestion.correctAnswer;
+      streakCount *= 0;
+      StreakText.text = "STREAK: " + streakCount;
+      Debug.Log("INCORRECT!");
+    }
+
+    return correct;
+  }
+
+
+  //Miscellaneous
   private void SetTimer (float value)
   {
     TimeSpan time = TimeSpan.FromSeconds(value);
