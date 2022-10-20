@@ -15,30 +15,40 @@ public class QuizManager : MonoBehaviour
 
 
   [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel;
+  [SerializeField] public Button choiceTrue, choiceFalse, choiceA, choiceB, choiceC, choiceD;
+  [SerializeField] public Text TrueAnswerText, FalseAnswerText, FinalAnswerText;
   [SerializeField] private Text factText, scoreText, timeText, streakText, finalscoreText, finalstreakText;
   [SerializeField] private float timeBetweenQuestions = 2f, timeLimit = 60;
-  [SerializeField] private Text TrueAnswerText, FalseAnswerText;
   [SerializeField] private QuizUI quizui;
   [SerializeField] private List<QuizQandA> quizData;
   [SerializeField] Animator animator;
 
+
+  public Button ChoiceTrue {get {return  choiceTrue;}}
+  public Button ChoiceFalse {get {return  choiceFalse;}}
+  public Button ChoiceA {get {return  choiceA;}}
+  public Button ChoiceB {get {return  choiceB;}}
+  public Button ChoiceC {get {return  choiceC;}}
+  public Button ChoiceD {get {return  choiceD;}}
   public Text ScoreText {get {return scoreText;}}
   public Text TimeText {get {return timeText;}}
   public Text StreakText {get {return streakText;}}
   public Text FinalScoreText {get {return finalscoreText;}}
   public Text FinalStreakText {get {return finalstreakText;}}
 
-  public int scoreCount = 0, streakCount = 0;
-  private float currentTimer;
-
   public GameStatus gamestatus = GameStatus.Menu;
 
   public GameObject GameOverPanel {get {return gameoverPanel;}}
+
+  public int scoreCount = 0, streakCount = 0, quizChoice = 0;
+  private float currentTimer;
+
 
   public void StartGame(int index)
   {
     scoreCount = 0;
     streakCount = 0;
+    quizChoice = index;
     currentTimer = timeLimit;
 
    unansweredQuestions = quizData[index].questions.ToList<Question>();
@@ -65,17 +75,6 @@ public class QuizManager : MonoBehaviour
 
     factText.text = currentQuestion.fact;
 
-    if (currentQuestion.isTrue)
-    {
-      TrueAnswerText.text = "INCORRECT!";
-      FalseAnswerText.text = "CORRECT!";
-    }
-    else
-    {
-      TrueAnswerText.text = "CORRECT!";
-      FalseAnswerText.text = "INCORRECT!";
-    }
-
   }
 
   IEnumerator TransitiontoNextQuestion ()
@@ -84,6 +83,8 @@ public class QuizManager : MonoBehaviour
 
      if (unansweredQuestions.Count > 0)
      {
+        TrueAnswerText.text = "";
+        FalseAnswerText.text = "";
         Invoke("SetCurrentQuestion", 0.4f);
         animator.SetTrigger("Idle");
      }
@@ -99,6 +100,7 @@ public class QuizManager : MonoBehaviour
     animator.SetTrigger("True"); 
     if (currentQuestion.isTrue)
     {
+      TrueAnswerText.text = "CORRECT!";
       Debug.Log("CORRECT!");
       streakCount++;
       StreakText.text = "STREAK: " + streakCount;
@@ -107,6 +109,7 @@ public class QuizManager : MonoBehaviour
     }
     else
     {
+      TrueAnswerText.text = "INCORRECT!";
       streakCount *= 0;
       StreakText.text = "STREAK: " + streakCount;
       Debug.Log("INCORRECT!");
@@ -120,6 +123,7 @@ public class QuizManager : MonoBehaviour
     animator.SetTrigger("False");
     if (!currentQuestion.isTrue)
     {
+      FalseAnswerText.text = "CORRECT!";
       Debug.Log("CORRECT!");
       streakCount++;
       StreakText.text = "STREAK: " + streakCount;
@@ -128,6 +132,7 @@ public class QuizManager : MonoBehaviour
     }
     else
     {
+      FalseAnswerText.text = "INCORRECT!";
       streakCount *= 0;
       StreakText.text = "STREAK: " + streakCount;
       Debug.Log("INCORRECT!");
@@ -170,7 +175,12 @@ public enum GameStatus
 [System.Serializable]
 public class Question
 {
+   //true or false
     public string fact;
     public bool isTrue;
+
+    //multiple choice
+    public List<string> answers;
+    public string correctAnswer;
 }
 
