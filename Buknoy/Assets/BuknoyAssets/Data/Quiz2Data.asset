@@ -13,10 +13,87 @@ MonoBehaviour:
   m_Name: Quiz2Data
   m_EditorClassIdentifier: 
   questions:
-  - fact: At the age of __ , St. La Salle was named Canon of Rheims Cathedral.
+  - fact: At the age of ___, La Salle was named Canon of Rheims Cathedral.
     isTrue: 0
     answers:
     - 21
     - 18
+    - 16
     - 10
     correctAnswer: 16
+  - fact: Which course did La Salle had a doctor's degree on?
+    isTrue: 0
+    answers:
+    - Engineering
+    - Biology
+    - Archaeology
+    - Theology
+    correctAnswer: Theology
+  - fact: During La Salle's time, this was a major problem in his country.
+    isTrue: 0
+    answers:
+    - Poverty
+    - Pandemic
+    - War
+    - Crime
+    correctAnswer: Poverty
+  - fact: A feast day is where a saint is celebrated. When is La Salle's feast day?
+    isTrue: 0
+    answers:
+    - March 7
+    - April 7
+    - December 7
+    - June 7
+    correctAnswer: April 7
+  - fact: La Salle educated not only students, but also teachers. Therefore, he founded
+      the first ____.
+    isTrue: 0
+    answers:
+    - High School
+    - Primary School
+    - Normal School
+    - University
+    correctAnswer: Normal School
+  - fact: La Salle is the founder of the Institute of the Brothers of the _____ ?
+    isTrue: 0
+    answers:
+    - Primary Education
+    - Christian Brothers
+    - Christian Schools
+    - Catholic Schools
+    correctAnswer: Christian Brothers
+  - fact: La Salle helped the religious congregation known as the ___ of the Child
+      Jesus in establishing a school.
+    isTrue: 0
+    answers:
+    - Teachers
+    - Priests
+    - Sisters
+    - Brothers
+    correctAnswer: Sisters
+  - fact: La Salle made sure that no Brother in his Institute will also serve as
+      a ____.
+    isTrue: 0
+    answers:
+    - Tutor
+    - Priest
+    - Doctor
+    - Farmer
+    correctAnswer: Priest
+  - fact: ' Due to his legacy as an educator, La Salle is remembered as the ____
+      of Teachers.'
+    isTrue: 0
+    answers:
+    - Father
+    - Patron Saint
+    - Pope
+    - Brother
+    correctAnswer: Patron Saint
+  - fact: La Salle resigned being a ____ to focus on teaching and founding schools.
+    isTrue: 0
+    answers:
+    - Principal
+    - Canon
+    - Bishop
+    - Archbishop
+    correctAnswer: Canon
