@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - fact: At the age of ___, La Salle was named Canon of Rheims Cathedral.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - 21
@@ -22,6 +26,10 @@ MonoBehaviour:
     - 10
     correctAnswer: 16
   - fact: Which course did La Salle had a doctor's degree on?
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - Engineering
@@ -30,6 +38,10 @@ MonoBehaviour:
     - Theology
     correctAnswer: Theology
   - fact: During La Salle's time, this was a major problem in his country.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - Poverty
@@ -38,6 +50,10 @@ MonoBehaviour:
     - Crime
     correctAnswer: Poverty
   - fact: A feast day is where a saint is celebrated. When is La Salle's feast day?
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - March 7
@@ -45,16 +61,23 @@ MonoBehaviour:
     - December 7
     - June 7
     correctAnswer: April 7
-  - fact: La Salle educated not only students, but also teachers. Therefore, he founded
-      the first ____.
+  - fact: To help in teaching the poor, La Salle founded ___.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
-    - High School
-    - Primary School
-    - Normal School
-    - University
-    correctAnswer: Normal School
+    - Farms
+    - Houses
+    - Schools
+    - Hospitals
+    correctAnswer: Schools
   - fact: La Salle is the founder of the Institute of the Brothers of the _____ ?
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - Primary Education
@@ -64,6 +87,10 @@ MonoBehaviour:
     correctAnswer: Christian Brothers
   - fact: La Salle helped the religious congregation known as the ___ of the Child
       Jesus in establishing a school.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - Teachers
@@ -73,6 +100,10 @@ MonoBehaviour:
     correctAnswer: Sisters
   - fact: La Salle made sure that no Brother in his Institute will also serve as
       a ____.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - Tutor
@@ -82,6 +113,10 @@ MonoBehaviour:
     correctAnswer: Priest
   - fact: ' Due to his legacy as an educator, La Salle is remembered as the ____
       of Teachers.'
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - Father
@@ -90,6 +125,10 @@ MonoBehaviour:
     - Brother
     correctAnswer: Patron Saint
   - fact: La Salle resigned being a ____ to focus on teaching and founding schools.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
     isTrue: 0
     answers:
     - Principal
@@ -97,3 +136,52 @@ MonoBehaviour:
     - Bishop
     - Archbishop
     correctAnswer: Canon
+  - fact: "When is La Salle\u2019s birthday?  "
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - 'May 30, 1651 '
+    - 'March 30, 1651 '
+    - 'April 30, 1651 '
+    - 'February 30, 1651 '
+    correctAnswer: 'April 30, 1651 '
+  - fact: 'As La Salle wanted poor children in France to have good education, which
+      language did he use to teach them? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Latin
+    - French
+    - English
+    - Spanish
+    correctAnswer: French
+  - fact: "What is La Salle\u2019s position in his family? "
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Second Brother
+    - 'Eldest Brother '
+    - Third Brother
+    - Youngest Brother
+    correctAnswer: 'Eldest Brother '
+  - fact: 'Because of his work, La Salle is also known as the Father of ____? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Modern Math
+    - 'Modern Science  '
+    - Modern Education
+    - 'Modern Arts  '
+    correctAnswer: Modern Education
