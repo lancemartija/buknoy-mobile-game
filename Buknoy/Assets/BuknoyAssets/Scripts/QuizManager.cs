@@ -15,9 +15,10 @@ public class QuizManager : MonoBehaviour
 
 
   [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel;
-  [SerializeField] public Button choiceTrue, choiceFalse;
-  [SerializeField] public List<Button> choiceMultiple;
-  [SerializeField] public Text TrueAnswerText, FalseAnswerText, FinalAnswerText, RightAnswerText;
+  [SerializeField] private Button choiceTrue, choiceFalse;
+  [SerializeField] private List<Button> choiceMultiple;
+  [SerializeField] private Text TrueAnswerText, FalseAnswerText, FinalAnswerText, RightAnswerText;
+  [SerializeField] private Image questionIMG;
   [SerializeField] private Text factText, scoreText, timeText, streakText, finalscoreText, finalstreakText;
   [SerializeField] private float timeBetweenQuestions = 2.5f, timeLimit = 60;
   [SerializeField] private QuizUI quizui;
@@ -37,7 +38,7 @@ public class QuizManager : MonoBehaviour
 
   public GameObject GameOverPanel {get {return gameoverPanel;}}
 
-  public int scoreCount = 0, streakCount = 0, quizChoice = 0;
+  private int  scoreCount = 0, streakCount = 0, quizChoice = 0, maxQuestions = 0, loopQuestions = 0;
   private float currentTimer;
 
 
@@ -48,15 +49,32 @@ public class QuizManager : MonoBehaviour
     quizChoice = index;
     currentTimer = timeLimit;
 
-    if (quizChoice > 1) // Multiple Choice Only
+    switch (quizChoice)
     {
-       for (int i = 0; i < choiceMultiple.Count; i++)
+      case 1:
+        maxQuestions = 5;
+        break;
+
+      case 2:
+        maxQuestions = 7;
+        for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
             localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
         }
-    }
 
+        break;
+      case 3:
+        maxQuestions = 7;
+        for (int i = 0; i < choiceMultiple.Count; i++)
+        {
+            Button localBtn = choiceMultiple[i];
+            localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
+        }
+        break;
+
+    }
+    
    unansweredQuestions = quizData[index].questions.ToList<Question>();
     gamestatus = GameStatus.Playing;
     SetCurrentQuestion();
@@ -81,6 +99,8 @@ public class QuizManager : MonoBehaviour
 
     factText.text = currentQuestion.fact;
 
+    QuestionType();
+
     if (quizChoice > 1)
     {
        List<string> ansOptions = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
@@ -93,14 +113,59 @@ public class QuizManager : MonoBehaviour
             choiceMultiple[i].name = ansOptions[i];    //set the name of button
         }
     }
+  }
 
+  void QuestionType()
+  {
+    if (currentQuestion.needsImage)
+    {
+      questionIMG.gameObject.SetActive(true);
+    }
+    else
+    {
+      questionIMG.gameObject.SetActive(false);
+    }
+
+    if (currentQuestion.isTrueorFalse)
+    {
+      //Activate True or False Buttons and Text
+      choiceTrue.gameObject.SetActive(true);
+      choiceFalse.gameObject.SetActive(true);
+      TrueAnswerText.gameObject.SetActive(true);
+      FalseAnswerText.gameObject.SetActive(true);
+
+      //Deactivates Multiple Choice Buttons and Text
+      for (int i = 0; i < choiceMultiple.Count; i++)
+      {
+        choiceMultiple[i].gameObject.SetActive(false);
+      }
+      FinalAnswerText.gameObject.SetActive(false);
+      RightAnswerText.gameObject.SetActive(false);
+    }
+    else if (currentQuestion.isMultipleChoice)
+    {
+      //Activates Multiple Choice Buttons and Text
+      for (int i = 0; i < choiceMultiple.Count; i++)
+      {
+        choiceMultiple[i].gameObject.SetActive(true);
+      }
+        FinalAnswerText.gameObject.SetActive(true);
+        RightAnswerText.gameObject.SetActive(true);
+
+      //Deactivates True or False Buttons and Text
+      choiceTrue.gameObject.SetActive(false);
+      choiceFalse.gameObject.SetActive(false);
+      TrueAnswerText.gameObject.SetActive(false);
+      FalseAnswerText.gameObject.SetActive(false);
+    }
   }
 
   IEnumerator TransitiontoNextQuestion ()
   {
      yield return new WaitForSeconds(timeBetweenQuestions);
+     loopQuestions++;
 
-     if (unansweredQuestions.Count > 0)
+     if (loopQuestions != maxQuestions)
      {
         TrueAnswerText.text = "";
         FalseAnswerText.text = "";
@@ -220,6 +285,7 @@ public class QuizManager : MonoBehaviour
     GameOverPanel.SetActive(true);
     FinalScoreText.text = "Final Score: " + scoreCount;
     FinalStreakText.text = "Final Streak: " + streakCount;
+    loopQuestions *= 0;
   }
 
   public void RetryButton ()
@@ -238,8 +304,14 @@ public enum GameStatus
 [System.Serializable]
 public class Question
 {
-   //true or false
+   //question info
     public string fact;
+    public Sprite questionImage;
+    public bool needsImage;
+    public bool isTrueorFalse;
+    public bool isMultipleChoice;
+
+    //true or false
     public bool isTrue;
 
     //multiple choice
