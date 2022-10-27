@@ -14,18 +14,6 @@ public class QuizUI : MonoBehaviour
         quizmanager.StartGame(1);
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
-        //
-        quizmanager.choiceTrue.gameObject.SetActive(true);
-        quizmanager.choiceFalse.gameObject.SetActive(true);
-        quizmanager.TrueAnswerText.gameObject.SetActive(true);
-        quizmanager.FalseAnswerText.gameObject.SetActive(true);
-        //
-        for (int i = 0; i < quizmanager.choiceMultiple.Count; i++)
-        {
-             quizmanager.choiceMultiple[i].gameObject.SetActive(false);
-        }
-        quizmanager.FinalAnswerText.gameObject.SetActive(false);
-        quizmanager.RightAnswerText.gameObject.SetActive(false);
     }
 
     public void Button2Click()
@@ -33,17 +21,12 @@ public class QuizUI : MonoBehaviour
         quizmanager.StartGame(2);
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
-        //
-        quizmanager.choiceTrue.gameObject.SetActive(false);
-        quizmanager.choiceFalse.gameObject.SetActive(false);
-        quizmanager.TrueAnswerText.gameObject.SetActive(false);
-        quizmanager.FalseAnswerText.gameObject.SetActive(false);
-        //
-        for (int i = 0; i < quizmanager.choiceMultiple.Count; i++)
-        {
-             quizmanager.choiceMultiple[i].gameObject.SetActive(true);
-        }
-        quizmanager.FinalAnswerText.gameObject.SetActive(true);
-        quizmanager.RightAnswerText.gameObject.SetActive(true);
+    }
+
+    public void Button3Click()
+    {
+        quizmanager.StartGame(3);
+        quizmanager.mainmenuPanel.SetActive(false);
+        quizmanager.quizPanel.SetActive(true);
     }
 }
