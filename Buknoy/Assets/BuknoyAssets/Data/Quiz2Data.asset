@@ -111,8 +111,8 @@ MonoBehaviour:
     - Doctor
     - Farmer
     correctAnswer: Priest
-  - fact: ' Due to his legacy as an educator, La Salle is remembered as the ____
-      of Teachers.'
+  - fact: Due to his legacy as an educator, La Salle is remembered as the ____ of
+      Teachers.
     questionImage: {fileID: 0}
     needsImage: 0
     isTrueorFalse: 0
