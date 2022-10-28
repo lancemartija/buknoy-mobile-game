@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8794ded8c145ece4cac8a574f718e074, type: 3}
+  m_Name: Quiz3Data
+  m_EditorClassIdentifier: 
+  questions:
+  - fact: This picture shows spirituality of La Salle.
+    questionImage: {fileID: 21300000, guid: d1ea0dc820895b24788d8ff502ee4254, type: 3}
+    needsImage: 1
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: We are all made in the image of God, so we must respect and help each other
+      the same way we respect and help God.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: 'La Salle and the Brothers made a Heroic Vow that they will maintain the
+      Institute they made. This is an example of which Lasallian core principle? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Respect for all Persons
+    - 'Inclusive Community '
+    - Quality Education
+    - Faith in God's Presence
+    correctAnswer: Faith in God's Presence
+  - fact: La Salle reminded his fellow Brothers to see Jesus Christ in all their
+      pupils. This is an example of which Lasallian core principle?
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Respect for all Persons
+    - Faith in God's Presence
+    - Inclusive Community
+    - None of the above
+    correctAnswer: Respect for all Persons
+  - fact: 'The Lasallian core values are made up of three words: Faith, Service and
+      ____. '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Community
+    - Communion
+    - Communication
+    - Combination
+    correctAnswer: Communion
+  - fact: La Salle letting poor children attend his schools for education is an example
+      of Inclusive Community.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 0
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: Even though some teachers left La Salle, La Salle did not give up on his
+      work, as he believed in God. This is an example of which Lasallian core principle?
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Faith in God's Presence
+    - Concern for the Poor
+    - Quality Education
+    - Respect for all Persons
+    correctAnswer: Faith in God's Presence
+  - fact: 'La Salle gave up his priestly duties so that he could help the poor. This
+      is an example of which Lasallian core principle? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Quality Education
+    - Inclusive Community
+    - Concern for the Poor
+    - None of the above
+    correctAnswer: Concern for the Poor
+  - fact: "The phrase \u201Cteaching minds and touching hearts\u201D is part of which
+      Lasallian core principle? "
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Communion
+    - Quality Education
+    - "Faith in God\u2019s Presence "
+    - Concern for the Poor
+    correctAnswer: Quality Education
+  - fact: "This type of education allows students to realize their true identity
+      as God\u2019s children and live life according to this identity. "
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Quality Education
+    - Christian Education
+    - Catholic Education
+    - Human Education
+    correctAnswer: Christian Education
+  - fact: "The phrase \u201Clove your neighbor as yourself\u201D is part of which
+      Lasallian core principle?"
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - 'Inclusive Community '
+    - Concern for the Poor
+    - Faith in God's Presence
+    - None of the above
+    correctAnswer: Concern for the Poor
+  - fact: This picture does NOT show spirituality of La Salle.
+    questionImage: {fileID: 21300000, guid: c5ade8b6a18d76248bfdb6af6fbe5753, type: 3}
+    needsImage: 1
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 0
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: 'La Salle reached out to young and uneducated men so that he could train
+      them into teachers. This is an example of which Lasallian core principle? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Inclusive Community
+    - Faith in God's Presence
+    - Concern for the Poor
+    - Respect for all Persons
+    correctAnswer: Inclusive Community
+  - fact: 'La Salle welcomed poor students and spoke the common language, which is
+      French. This is an example of which Lasallian core principle? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Quality Education
+    - 'Inclusive Community '
+    - Respect for all Persons
+    - Faith in God's Presence
+    correctAnswer: Inclusive Community
