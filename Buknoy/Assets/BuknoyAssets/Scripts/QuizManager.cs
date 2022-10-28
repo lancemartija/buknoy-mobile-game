@@ -38,6 +38,7 @@ public class QuizManager : MonoBehaviour
 
   public GameObject GameOverPanel {get {return gameoverPanel;}}
 
+
   private int  scoreCount = 0, streakCount = 0, quizChoice = 0, maxQuestions = 0, loopQuestions = 0;
   private float currentTimer;
 
@@ -51,6 +52,9 @@ public class QuizManager : MonoBehaviour
 
     switch (quizChoice)
     {
+      case 0:
+        maxQuestions = 3;
+        break;
       case 1:
         maxQuestions = 5;
         break;
@@ -71,11 +75,11 @@ public class QuizManager : MonoBehaviour
             Button localBtn = choiceMultiple[i];
             localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
         }
-        break;
 
+        break;
     }
     
-   unansweredQuestions = quizData[index].questions.ToList<Question>();
+    unansweredQuestions = quizData[index].questions.ToList<Question>();
     gamestatus = GameStatus.Playing;
     SetCurrentQuestion();
   
@@ -99,20 +103,19 @@ public class QuizManager : MonoBehaviour
 
     factText.text = currentQuestion.fact;
 
-    QuestionType();
-
-    if (quizChoice > 1)
+    if (quizChoice >= 2)
     {
-       List<string> ansOptions = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
-
-        //assign options to respective option buttons
-        for (int i = 0; i < choiceMultiple.Count; i++)
-        {
-            //set the child text
-            choiceMultiple[i].GetComponentInChildren<Text>().text = ansOptions[i];
-            choiceMultiple[i].name = ansOptions[i];    //set the name of button
-        }
+      List<string> ansOptions = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
+      //assign options to respective option buttons
+      for (int i = 0; i < choiceMultiple.Count; i++)
+      {
+        //set the child text
+        choiceMultiple[i].GetComponentInChildren<Text>().text = ansOptions[i];
+        choiceMultiple[i].name = ansOptions[i];    //set the name of button
+      }
     }
+
+    QuestionType();
   }
 
   void QuestionType()
@@ -120,6 +123,8 @@ public class QuizManager : MonoBehaviour
     if (currentQuestion.needsImage)
     {
       questionIMG.gameObject.SetActive(true);
+
+      questionIMG.sprite = currentQuestion.questionImage;
     }
     else
     {
@@ -249,11 +254,11 @@ public class QuizManager : MonoBehaviour
     {
       correct = true;
       FinalAnswerText.text = "CORRECT!";
-      Debug.Log("CORRECT!");
       streakCount++;
       StreakText.text = "STREAK: " + streakCount;
       scoreCount += 100 * streakCount;
       ScoreText.text = "SCORE:" + scoreCount;
+      Debug.Log("CORRECT!");
     }
     else
     {
