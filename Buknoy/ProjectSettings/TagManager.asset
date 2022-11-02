@@ -6,6 +6,7 @@ TagManager:
   tags:
   - square
   - Trap
+  - GM
   layers:
   - Default
   - TransparentFX
