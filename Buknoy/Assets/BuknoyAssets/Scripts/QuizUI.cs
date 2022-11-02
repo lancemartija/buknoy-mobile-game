@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuizUI : MonoBehaviour
 {
@@ -28,5 +29,9 @@ public class QuizUI : MonoBehaviour
         quizmanager.StartGame(3);
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
+    }
+    public void BacktoMenuHub()
+    {
+        SceneManager.LoadScene("MenuHub");
     }
 }
