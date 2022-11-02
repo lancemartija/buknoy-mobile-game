@@ -69,7 +69,7 @@ MonoBehaviour:
     isTrue: 1
     answers: []
     correctAnswer: 
-  - fact: "During La Salle\u2019s time, the language used in teaching was Latin"
+  - fact: "During La Salle\u2019s time, the language used in teaching was Latin."
     questionImage: {fileID: 0}
     needsImage: 0
     isTrueorFalse: 1
