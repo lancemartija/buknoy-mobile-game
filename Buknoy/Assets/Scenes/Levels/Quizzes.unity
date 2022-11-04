@@ -1778,7 +1778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -237.1658, y: 0}
+  m_AnchoredPosition: {x: -237.16577, y: 0}
   m_SizeDelta: {x: -496.5023, y: 56.2629}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &322624812
@@ -2187,7 +2187,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 468230347}
         m_TargetAssemblyTypeName: QuizUI, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Button0Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3883,8 +3883,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1456424181}
-        m_TargetAssemblyTypeName: QuizManager, Assembly-CSharp
+      - m_Target: {fileID: 468230347}
+        m_TargetAssemblyTypeName: QuizUI, Assembly-CSharp
         m_MethodName: RetryButton
         m_Mode: 1
         m_Arguments:
@@ -6706,7 +6706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -237.1658, y: -38.55359}
+  m_AnchoredPosition: {x: -237.16577, y: -38.55359}
   m_SizeDelta: {x: -496.5023, y: 56.2629}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1732848023
