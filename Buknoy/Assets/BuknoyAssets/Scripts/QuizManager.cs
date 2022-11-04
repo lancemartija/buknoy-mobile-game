@@ -14,7 +14,7 @@ public class QuizManager : MonoBehaviour
   public Question currentQuestion;
 
 
-  [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel;
+  [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel, pausePanel, confirmexitPanel;
   [SerializeField] private Button choiceTrue, choiceFalse;
   [SerializeField] private List<Button> choiceMultiple;
   [SerializeField] private Text TrueAnswerText, FalseAnswerText, FinalAnswerText, RightAnswerText;
@@ -37,6 +37,8 @@ public class QuizManager : MonoBehaviour
   public GameStatus gamestatus = GameStatus.Menu;
 
   public GameObject GameOverPanel {get {return gameoverPanel;}}
+  public GameObject PausePanel {get {return pausePanel;}}
+  public GameObject ConfirmExitPanel {get {return confirmexitPanel;}}
 
 
   private int  scoreCount = 0, streakCount = 0, quizChoice = 0, maxQuestions = 0, loopQuestions = 0;
@@ -57,10 +59,12 @@ public class QuizManager : MonoBehaviour
         break;
       case 1:
         maxQuestions = 5;
+        gamestatus = GameStatus.Playing;
         break;
 
       case 2:
         maxQuestions = 7;
+        gamestatus = GameStatus.Playing;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
@@ -70,6 +74,7 @@ public class QuizManager : MonoBehaviour
         break;
       case 3:
         maxQuestions = 7;
+        gamestatus = GameStatus.Playing;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
@@ -80,7 +85,6 @@ public class QuizManager : MonoBehaviour
     }
     
     unansweredQuestions = quizData[index].questions.ToList<Question>();
-    gamestatus = GameStatus.Playing;
     SetCurrentQuestion();
   
   }
@@ -293,10 +297,6 @@ public class QuizManager : MonoBehaviour
     loopQuestions *= 0;
   }
 
-  public void RetryButton ()
-  {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-  }
 }
 
 [System.Serializable]

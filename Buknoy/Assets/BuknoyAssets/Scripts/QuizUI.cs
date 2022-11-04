@@ -9,7 +9,14 @@ public class QuizUI : MonoBehaviour
     [SerializeField] public QuizManager quizmanager;
 
     
-
+    //Quiz Hub Buttons
+    public void Button0Click()
+    {
+        quizmanager.StartGame(0);
+        quizmanager.mainmenuPanel.SetActive(false);
+        quizmanager.quizPanel.SetActive(true);
+    }
+    
     public void Button1Click()
     {
         quizmanager.StartGame(1);
@@ -33,5 +40,28 @@ public class QuizUI : MonoBehaviour
     public void BacktoMenuHub()
     {
         SceneManager.LoadScene("MenuHub");
+    }
+    //Quiz Game Buttons
+    public void PauseButton()
+    {
+
+       quizmanager.gamestatus = GameStatus.Menu;
+       quizmanager.PausePanel.SetActive(true);
+    }
+    public void ConfirmExitButton()
+    {
+        quizmanager.ConfirmExitPanel.SetActive(true);
+    }
+    public void ResumeButton()
+    {
+
+        quizmanager.gamestatus = GameStatus.Playing;
+        quizmanager.PausePanel.SetActive(false);
+        quizmanager.ConfirmExitPanel.SetActive(false);
+    }
+
+    public void RetryButton ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
