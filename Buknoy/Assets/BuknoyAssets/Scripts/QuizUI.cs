@@ -10,6 +10,13 @@ public class QuizUI : MonoBehaviour
 
     
     //Quiz Hub Buttons
+    public void Button0Click()
+    {
+        quizmanager.StartGame(0);
+        quizmanager.mainmenuPanel.SetActive(false);
+        quizmanager.quizPanel.SetActive(true);
+    }
+    
     public void Button1Click()
     {
         quizmanager.StartGame(1);
