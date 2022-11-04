@@ -55,38 +55,39 @@ public class QuizManager : MonoBehaviour
     switch (quizChoice)
     {
       case 0:
-        maxQuestions = 3;
+        maxQuestions = 4;
+        for (int i = 0; i < choiceMultiple.Count; i++)
+        {
+            Button localBtn = choiceMultiple[i];
+            localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
+        }
         break;
       case 1:
         maxQuestions = 5;
         gamestatus = GameStatus.Playing;
         break;
-
       case 2:
         maxQuestions = 7;
-        gamestatus = GameStatus.Playing;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
             localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
         }
-
+        gamestatus = GameStatus.Playing;
         break;
       case 3:
         maxQuestions = 7;
-        gamestatus = GameStatus.Playing;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
             localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
         }
-
+        gamestatus = GameStatus.Playing;
         break;
     }
     
     unansweredQuestions = quizData[index].questions.ToList<Question>();
     SetCurrentQuestion();
-  
   }
 
   public void Update()
@@ -107,7 +108,7 @@ public class QuizManager : MonoBehaviour
 
     factText.text = currentQuestion.fact;
 
-    if (quizChoice >= 2)
+    if (quizChoice != 1)
     {
       List<string> ansOptions = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
       //assign options to respective option buttons
@@ -241,11 +242,8 @@ public class QuizManager : MonoBehaviour
 
   void MultipleOnClick(Button btn)
   {
-    if (gamestatus == GameStatus.Playing)
-    {
-       bool val = UserSelectMultiple(btn.name);
-       StartCoroutine(TransitiontoNextQuestion());
-    }
+    bool val = UserSelectMultiple(btn.name);
+    StartCoroutine(TransitiontoNextQuestion());
   }
 
 

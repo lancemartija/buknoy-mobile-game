@@ -12,4 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8794ded8c145ece4cac8a574f718e074, type: 3}
   m_Name: TutorialData
   m_EditorClassIdentifier: 
-  questions: []
+  questions:
+  - fact: In True or False, tap on True if the statement is correct.  For this question,
+      tap on the TRUE BUTTON to get the correct answer.
+    questionImage: {fileID: 0}
+    needsImage: 1
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: In True or False, tap on False if the statement is not correct. For this
+      question, tap on the FALSE BUTTON to get the correct answer.
+    questionImage: {fileID: 0}
+    needsImage: 1
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 0
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: Option A
+  - fact: In Multiple Choice, only one option is correct. For this question, tap
+      on OPTION A for the correct answer.
+    questionImage: {fileID: 0}
+    needsImage: 1
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Option A
+    - Option B
+    - Option C
+    - Option D
+    correctAnswer: Option A
+  - fact: In Multiple Choice, only one option is correct. For this question, tap
+      on OPTION B for the correct answer.
+    questionImage: {fileID: 0}
+    needsImage: 1
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Option A
+    - Option B
+    - Option C
+    - Option D
+    correctAnswer: Option B
