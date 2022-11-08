@@ -14,17 +14,19 @@ public class QuizManager : MonoBehaviour
   public Question currentQuestion;
 
 
-  [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel, pausePanel, confirmexitPanel;
+  [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel, pausePanel, confirmexitPanel, quizResultsPanel;
+  [SerializeField] private List<QuizQandA> quizData;
+  [SerializeField] private List<Text> QuizScore, QuizStreak;
   [SerializeField] private Button choiceTrue, choiceFalse;
   [SerializeField] private List<Button> choiceMultiple;
   [SerializeField] private Text TrueAnswerText, FalseAnswerText, FinalAnswerText, RightAnswerText;
   [SerializeField] private Image questionIMG;
   [SerializeField] private Text factText, scoreText, timeText, streakText, finalscoreText, finalstreakText;
   [SerializeField] private float timeBetweenQuestions = 2.5f, timeLimit = 60;
-  [SerializeField] private QuizUI quizui;
-  [SerializeField] private List<QuizQandA> quizData;
   [SerializeField] Animator animator;
 
+  public List<int> HighScore = new List<int>() {0,0,0,0};
+  public List<int> HighStreak = new List<int>() {0,0,0,0};
 
   public Button ChoiceTrue {get {return  choiceTrue;}}
   public Button ChoiceFalse {get {return  choiceFalse;}}
@@ -40,8 +42,8 @@ public class QuizManager : MonoBehaviour
   public GameObject PausePanel {get {return pausePanel;}}
   public GameObject ConfirmExitPanel {get {return confirmexitPanel;}}
 
-
-  private int  scoreCount = 0, streakCount = 0, quizChoice = 0, maxQuestions = 0, loopQuestions = 0;
+  private int  quizChoice = 0;
+  public int scoreCount, streakCount, maxQuestions = 0, loopQuestions = 0;
   private float currentTimer;
 
 
@@ -49,12 +51,13 @@ public class QuizManager : MonoBehaviour
   {
     scoreCount = 0;
     streakCount = 0;
+    
     quizChoice = index;
     currentTimer = timeLimit;
 
     switch (quizChoice)
     {
-      case 0:
+      case 0: //Tutorial; Timer does not count down
         maxQuestions = 4;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
@@ -62,12 +65,12 @@ public class QuizManager : MonoBehaviour
             localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
         }
         break;
-      case 1:
-        maxQuestions = 5;
+      case 1: // Quiz 1, True or False only
+        maxQuestions = 2; //5
         gamestatus = GameStatus.Playing;
         break;
-      case 2:
-        maxQuestions = 7;
+      case 2: //Quiz 2, Multiple Choice only
+        maxQuestions = 2; //7
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
@@ -75,8 +78,8 @@ public class QuizManager : MonoBehaviour
         }
         gamestatus = GameStatus.Playing;
         break;
-      case 3:
-        maxQuestions = 7;
+      case 3://Quiz 3, Multiple Choice and True or False
+        maxQuestions = 2; //7
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
@@ -85,7 +88,7 @@ public class QuizManager : MonoBehaviour
         gamestatus = GameStatus.Playing;
         break;
     }
-    
+
     unansweredQuestions = quizData[index].questions.ToList<Question>();
     SetCurrentQuestion();
   }
@@ -101,6 +104,8 @@ public class QuizManager : MonoBehaviour
 
   void SetCurrentQuestion ()
   {
+    Debug.Log("QUESTION #:" + (loopQuestions + 1));
+    Debug.Log("MAX QUESTIONS:" + maxQuestions);
     int randomQuestionIndex = UnityEngine.Random.Range (0, unansweredQuestions.Count);
     currentQuestion = unansweredQuestions[randomQuestionIndex];
 
@@ -108,7 +113,7 @@ public class QuizManager : MonoBehaviour
 
     factText.text = currentQuestion.fact;
 
-    if (quizChoice != 1)
+    if (quizChoice != 1) //Quiz 1 is True or False only
     {
       List<string> ansOptions = ShuffleList.ShuffleListItems<string>(currentQuestion.answers);
       //assign options to respective option buttons
@@ -186,7 +191,8 @@ public class QuizManager : MonoBehaviour
      }
      else
      {
-      GameOver();
+        GameOver();
+        animator.SetTrigger("Idle");
      }
 
   }
@@ -287,14 +293,30 @@ public class QuizManager : MonoBehaviour
   }
   private void GameOver()
   {
-
     gamestatus = GameStatus.Menu;
     GameOverPanel.SetActive(true);
     FinalScoreText.text = "Final Score: " + scoreCount;
     FinalStreakText.text = "Final Streak: " + streakCount;
-    loopQuestions *= 0;
-  }
 
+    //Saved and Displayed in View Results panel
+    HighScore.Insert(quizChoice, scoreCount);
+    HighStreak.Insert(quizChoice, streakCount);
+    //for (int i = 0; i < HighScore.Count; i++)
+    //{
+      //Debug.Log("RESULTS TOTAL:" + HighScore.Count);
+      //Debug.Log("SCORE #" + i + ":" + HighScore[i]);
+      //Debug.Log("STREAK #" + i + ":" + HighStreak[i]);
+    //}
+  }
+  public void ViewResults()
+  {
+    Debug.Log("RESULTS TOTAL:" + HighScore.Count);
+    for (int i = 0; i < HighScore.Count; i++)
+    {
+      QuizScore[i].text = "HIGH SCORE:\n " + HighScore[i];
+      QuizStreak[i].text = "HIGHEST STREAK:\n " + HighStreak[i];
+    }
+  }
 }
 
 [System.Serializable]
