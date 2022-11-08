@@ -74,4 +74,16 @@ public class QuizUI : MonoBehaviour
     {
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void DeleteHighScoreDataButton()
+    {
+        quizresults.DeleteHighScoreData();
+        quizmanager.results.Clear();
+        for (int i = 0; i < 4; i++)
+        {
+            quizmanager.QuizScore[i].text = "HIGH SCORE:\n 0";
+            quizmanager.QuizStreak[i].text = "HIGHEST STREAK:\n 0";
+        }
+        Debug.Log("File deleted!");
+    }
 }
