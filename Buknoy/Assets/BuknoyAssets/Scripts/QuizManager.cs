@@ -15,8 +15,8 @@ public class QuizManager : MonoBehaviour
 
 
   [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel, pausePanel, confirmexitPanel, quizResultsPanel;
+  [SerializeField] public List<Text> QuizScore, QuizStreak;
   [SerializeField] private List<QuizQandA> quizData;
-  [SerializeField] private List<Text> QuizScore, QuizStreak;
   [SerializeField] private Button choiceTrue, choiceFalse;
   [SerializeField] private List<Button> choiceMultiple;
   [SerializeField] private Text TrueAnswerText, FalseAnswerText, FinalAnswerText, RightAnswerText;
@@ -25,8 +25,9 @@ public class QuizManager : MonoBehaviour
   [SerializeField] private float timeBetweenQuestions = 2.5f, timeLimit = 60;
   [SerializeField] Animator animator;
 
-  public List<int> HighScore = new List<int>() {0,0,0,0};
-  public List<int> HighStreak = new List<int>() {0,0,0,0};
+  public List <QuizResults> results = new List<QuizResults>();
+  
+
 
   public Button ChoiceTrue {get {return  choiceTrue;}}
   public Button ChoiceFalse {get {return  choiceFalse;}}
@@ -104,8 +105,6 @@ public class QuizManager : MonoBehaviour
 
   void SetCurrentQuestion ()
   {
-    Debug.Log("QUESTION #:" + (loopQuestions + 1));
-    Debug.Log("MAX QUESTIONS:" + maxQuestions);
     int randomQuestionIndex = UnityEngine.Random.Range (0, unansweredQuestions.Count);
     currentQuestion = unansweredQuestions[randomQuestionIndex];
 
@@ -297,24 +296,60 @@ public class QuizManager : MonoBehaviour
     GameOverPanel.SetActive(true);
     FinalScoreText.text = "Final Score: " + scoreCount;
     FinalStreakText.text = "Final Streak: " + streakCount;
+    if (scoreCount > results[quizChoice].highScore)
+    {
+      AddNewScore(scoreCount, quizChoice);
+    }
+    if (streakCount > results[quizChoice].highStreak)
+    {
+      AddNewStreak(streakCount, quizChoice);
+    }
+    Save();
+    
+  }
 
-    //Saved and Displayed in View Results panel
-    HighScore.Insert(quizChoice, scoreCount);
-    HighStreak.Insert(quizChoice, streakCount);
-    //for (int i = 0; i < HighScore.Count; i++)
-    //{
-      //Debug.Log("RESULTS TOTAL:" + HighScore.Count);
-      //Debug.Log("SCORE #" + i + ":" + HighScore[i]);
-      //Debug.Log("STREAK #" + i + ":" + HighStreak[i]);
-    //}
+  //View Results Methods
+  public void SetDefaultResults(int score, int streak, int quizchoice)
+  {
+     results.Add(new QuizResults { highScore = score, highStreak = streak, quiznumber = quizchoice});
+  }
+
+  private void AddNewScore(int score, int quizchoice)
+  {
+    QuizResults updateresults = new QuizResults() { highScore = score, quiznumber = quizchoice};
+    int resultsindex = results.FindIndex(results => results.quiznumber == updateresults.quiznumber);
+    if (resultsindex != -1)
+    {
+        results[resultsindex].highScore = updateresults.highScore;
+    }
+  }
+
+  private void AddNewStreak(int streak, int quizchoice)
+  {
+    QuizResults updateresults = new QuizResults() {highStreak = streak, quiznumber = quizchoice};
+    int resultsindex = results.FindIndex(results => results.quiznumber == updateresults.quiznumber);
+    if (resultsindex != -1)
+    {
+        results[resultsindex].highStreak = updateresults.highStreak;
+    }
+  }
+  public void Save()
+  {
+    QuizResultsManager.instance.SaveScores(results);
+  }
+  public void Load()
+  {
+    results = QuizResultsManager.instance.LoadScores();
   }
   public void ViewResults()
   {
-    Debug.Log("RESULTS TOTAL:" + HighScore.Count);
-    for (int i = 0; i < HighScore.Count; i++)
+    Load();  
+    results.Sort((QuizResults x, QuizResults y) => x.quiznumber.CompareTo(y.quiznumber));
+    Debug.Log("RESULTS TOTAL:" + results.Count);
+    for (int i = 0; i < results.Count; i++)
     {
-      QuizScore[i].text = "HIGH SCORE:\n " + HighScore[i];
-      QuizStreak[i].text = "HIGHEST STREAK:\n " + HighStreak[i];
+      QuizScore[i].text = "HIGH SCORE:\n " + results[i].highScore;
+      QuizStreak[i].text = "HIGHEST STREAK:\n " + results[i].highStreak;
     }
   }
 }
@@ -342,5 +377,15 @@ public class Question
     //multiple choice
     public List<string> answers;
     public string correctAnswer;
+}
+
+
+[System.Serializable]
+public class QuizResults
+{
+   //question info
+    public int highScore;
+    public int highStreak;
+    public int quiznumber;
 }
 
