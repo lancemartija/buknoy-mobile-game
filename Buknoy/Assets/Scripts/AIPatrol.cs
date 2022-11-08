@@ -5,6 +5,7 @@ using UnityEngine;
 public class AIPatrol : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
+    [SerializeField] private float damage;
 
     Rigidbody2D enmyRigidbody;
 
@@ -32,6 +33,10 @@ public class AIPatrol : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision.tag == "Player")
+        {
+            collision.GetComponent<Health>().TakeDamage(damage);
+        }
         transform.localScale = new Vector2(-(Mathf.Sign(enmyRigidbody.velocity.x)), transform.localScale.y);
     }
 }
