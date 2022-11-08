@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class QuizUI : MonoBehaviour
 {
     [SerializeField] public QuizManager quizmanager;
+    [SerializeField] public QuizResultsManager quizresults;
 
     
     //Quiz Hub Buttons
@@ -37,6 +38,15 @@ public class QuizUI : MonoBehaviour
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
     }
+    public void ButtonResultsClick() //View Results
+    {
+        quizmanager.quizResultsPanel.SetActive(true);
+        quizmanager.ViewResults();
+    }
+    public void BacktoQuizHub()
+    {
+        quizmanager.quizResultsPanel.SetActive(false);
+    }
     public void BacktoMenuHub()
     {
         SceneManager.LoadScene("MenuHub");
@@ -62,6 +72,6 @@ public class QuizUI : MonoBehaviour
 
     public void RetryButton ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
