@@ -21,6 +21,7 @@ public class QuizUI : MonoBehaviour
     public void Button1Click()
     {
         quizmanager.StartGame(1);
+        quizmanager.Load();
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
     }
@@ -28,6 +29,7 @@ public class QuizUI : MonoBehaviour
     public void Button2Click()
     {
         quizmanager.StartGame(2);
+        quizmanager.Load();
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
     }
@@ -35,6 +37,7 @@ public class QuizUI : MonoBehaviour
     public void Button3Click()
     {
         quizmanager.StartGame(3);
+        quizmanager.Load();
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
     }
