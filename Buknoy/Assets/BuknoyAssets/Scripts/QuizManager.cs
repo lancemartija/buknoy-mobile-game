@@ -14,7 +14,7 @@ public class QuizManager : MonoBehaviour
   public Question currentQuestion;
 
 
-  [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel, pausePanel, confirmexitPanel, quizResultsPanel;
+  [SerializeField] public GameObject gameoverPanel, mainmenuPanel, quizPanel, quizResultsPanel;
   [SerializeField] public List<Text> QuizScore, QuizStreak;
   [SerializeField] private List<QuizQandA> quizData;
   [SerializeField] private Button choiceTrue, choiceFalse;
@@ -41,8 +41,6 @@ public class QuizManager : MonoBehaviour
   public GameStatus gamestatus = GameStatus.Menu;
 
   public GameObject GameOverPanel {get {return gameoverPanel;}}
-  public GameObject PausePanel {get {return pausePanel;}}
-  public GameObject ConfirmExitPanel {get {return confirmexitPanel;}}
 
   private int  quizChoice = 0;
   public int scoreCount, streakCount, maxQuestions = 0, loopQuestions = 0;
