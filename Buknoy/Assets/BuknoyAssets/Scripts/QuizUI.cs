@@ -8,6 +8,11 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] public QuizManager quizmanager;
     [SerializeField] public QuizResultsManager quizresults;
+    [SerializeField] public GameObject confirmexitPanel, confirmdeletePanel, pausePanel;
+
+    public GameObject PausePanel {get {return pausePanel;}}
+    public GameObject ConfirmExitPanel {get {return confirmexitPanel;}}
+    public GameObject ConfirmDeletePanel {get {return confirmdeletePanel;}}
 
     
     //Quiz Hub Buttons
@@ -59,27 +64,35 @@ public class QuizUI : MonoBehaviour
     {
 
        quizmanager.gamestatus = GameStatus.Menu;
-       quizmanager.PausePanel.SetActive(true);
+       PausePanel.SetActive(true);
     }
     public void ConfirmExitButton()
     {
-        quizmanager.ConfirmExitPanel.SetActive(true);
+        ConfirmExitPanel.SetActive(true);
     }
     public void ResumeButton()
     {
 
         quizmanager.gamestatus = GameStatus.Playing;
-        quizmanager.PausePanel.SetActive(false);
-        quizmanager.ConfirmExitPanel.SetActive(false);
+        PausePanel.SetActive(false);
+        ConfirmExitPanel.SetActive(false);
     }
 
     public void RetryButton ()
     {
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
+    public void ConfirmDeleteButton()
+    {
+        ConfirmDeletePanel.SetActive(true);
+    }
+    public void Resume2Button()
+    {
+        ConfirmDeletePanel.SetActive(false);
+    }
     public void DeleteHighScoreDataButton()
     {
+        ConfirmDeletePanel.SetActive(false);
         quizresults.DeleteHighScoreData();
         quizmanager.results.Clear();
         for (int i = 0; i < 4; i++)
