@@ -8,6 +8,8 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] public QuizManager quizmanager;
     [SerializeField] public QuizResultsManager quizresults;
+    
+
     [SerializeField] public GameObject confirmexitPanel, confirmdeletePanel, pausePanel;
 
     public GameObject PausePanel {get {return pausePanel;}}
@@ -57,7 +59,16 @@ public class QuizUI : MonoBehaviour
     }
     public void BacktoMenuHub()
     {
+        Invoke("LoadMenuHub", 2f);
+    }
+    //Load other Scenes after 2 seconds
+    void LoadMenuHub()
+    {
         SceneManager.LoadScene("MenuHub");
+    }
+    void LoadQuizScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     //Quiz Game Buttons
     public void PauseButton()
@@ -80,7 +91,7 @@ public class QuizUI : MonoBehaviour
 
     public void RetryButton ()
     {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Invoke("LoadQuizScene", 2f);
     }
     public void ConfirmDeleteButton()
     {
