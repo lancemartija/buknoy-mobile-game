@@ -24,6 +24,7 @@ public class QuizManager : MonoBehaviour
   [SerializeField] private Text factText, scoreText, timeText, streakText, finalscoreText, finalstreakText, questionnoText;
   [SerializeField] private float timeBetweenQuestions = 2.5f, timeLimit = 60;
   [SerializeField] Animator animator;
+  [SerializeField] public QuizAudio quizaudio;
 
   public List <QuizResults> results = new List<QuizResults>();
   
@@ -88,6 +89,7 @@ public class QuizManager : MonoBehaviour
         gamestatus = GameStatus.Playing;
         break;
     }
+    quizaudio.MenutoGameBGM();
     unansweredQuestions = quizData[index].questions.ToList<Question>();
     SetCurrentQuestion();
   }
@@ -202,6 +204,7 @@ public class QuizManager : MonoBehaviour
     animator.SetTrigger("True"); 
     if (currentQuestion.isTrue)
     {
+      quizaudio.CorrectSound();
       TrueAnswerText.text = "CORRECT!";
       Debug.Log("CORRECT!");
       streakCount++;
@@ -211,6 +214,7 @@ public class QuizManager : MonoBehaviour
     }
     else
     {
+      quizaudio.IncorrectSound();
       TrueAnswerText.text = "INCORRECT!";
       streakCount *= 0;
       StreakText.text = "STREAK: " + streakCount;
@@ -225,6 +229,7 @@ public class QuizManager : MonoBehaviour
     animator.SetTrigger("False");
     if (!currentQuestion.isTrue)
     {
+      quizaudio.CorrectSound();
       FalseAnswerText.text = "CORRECT!";
       Debug.Log("CORRECT!");
       streakCount++;
@@ -234,6 +239,7 @@ public class QuizManager : MonoBehaviour
     }
     else
     {
+      quizaudio.IncorrectSound();
       FalseAnswerText.text = "INCORRECT!";
       streakCount *= 0;
       StreakText.text = "STREAK: " + streakCount;
@@ -259,6 +265,7 @@ public class QuizManager : MonoBehaviour
     animator.SetTrigger("Multiple");
     if (currentQuestion.correctAnswer == selectedChoice)
     {
+      quizaudio.CorrectSound();
       correct = true;
       FinalAnswerText.text = "CORRECT!";
       streakCount++;
@@ -269,6 +276,7 @@ public class QuizManager : MonoBehaviour
     }
     else
     {
+      quizaudio.IncorrectSound();
       FinalAnswerText.text = "INCORRECT!";
       RightAnswerText.text = "Correct answer was: " + currentQuestion.correctAnswer;
       streakCount *= 0;
@@ -296,6 +304,7 @@ public class QuizManager : MonoBehaviour
     Debug.Log("High Score:" + results[quizChoice - 1].highScore);
     gamestatus = GameStatus.Menu;
     GameOverPanel.SetActive(true);
+    quizaudio.GameOverSound();
     FinalScoreText.text = "Final Score: " + scoreCount;
     FinalStreakText.text = "Final Streak: " + streakCount;
 
