@@ -89,6 +89,7 @@ public class QuizManager : MonoBehaviour
         gamestatus = GameStatus.Playing;
         break;
     }
+    quizaudio.LoadAudioSettings();
     quizaudio.MenutoGameBGM();
     unansweredQuestions = quizData[index].questions.ToList<Question>();
     SetCurrentQuestion();
