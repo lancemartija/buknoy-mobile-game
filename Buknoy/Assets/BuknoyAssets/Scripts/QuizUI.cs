@@ -83,8 +83,10 @@ public class QuizUI : MonoBehaviour
     }
     public void ResumeButton()
     {
-
-        quizmanager.gamestatus = GameStatus.Playing;
+        if (quizmanager.quizChoice > 0)
+        {
+            quizmanager.gamestatus = GameStatus.Playing;
+        }
         PausePanel.SetActive(false);
         ConfirmExitPanel.SetActive(false);
     }

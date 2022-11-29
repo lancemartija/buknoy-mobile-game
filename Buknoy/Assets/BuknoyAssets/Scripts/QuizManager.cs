@@ -43,7 +43,7 @@ public class QuizManager : MonoBehaviour
 
   public GameObject GameOverPanel {get {return gameoverPanel;}}
 
-  private int  quizChoice = 0;
+  public int  quizChoice = 0;
   public int scoreCount, streakCount, maxQuestions = 0, loopQuestions = 0;
   private float currentTimer;
 
@@ -302,25 +302,29 @@ public class QuizManager : MonoBehaviour
   private void GameOver()
   {
     Debug.Log("Final Score:" + scoreCount);
-    Debug.Log("High Score:" + results[quizChoice - 1].highScore);
+    //Debug.Log("High Score:" + results[quizChoice - 1].highScore);
     gamestatus = GameStatus.Menu;
     GameOverPanel.SetActive(true);
     quizaudio.GameOverSound();
     FinalScoreText.text = "Final Score: " + scoreCount;
     FinalStreakText.text = "Final Streak: " + streakCount;
 
-     if (scoreCount > results[quizChoice - 1].highScore || streakCount > results[quizChoice - 1].highStreak)
-     {
-       if (scoreCount > results[quizChoice - 1].highScore)
-        {
-          AddNewScore(scoreCount, quizChoice);
-        }
-        if (streakCount > results[quizChoice - 1].highStreak)
-        {
-          AddNewStreak(streakCount, quizChoice);
-        }
-        Save();
-     }
+    if (quizChoice > 0)
+    {
+      if (scoreCount > results[quizChoice - 1].highScore || streakCount > results[quizChoice - 1].highStreak)
+      {
+        if (scoreCount > results[quizChoice - 1].highScore)
+          {
+            AddNewScore(scoreCount, quizChoice);
+          }
+          if (streakCount > results[quizChoice - 1].highStreak)
+          {
+            AddNewStreak(streakCount, quizChoice);
+          }
+          Save();
+      }
+    }
+
   
   }
 
