@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,37 +7,46 @@ using UnityEngine.UI;
 public class QuizAudio : MonoBehaviour
 {
 
-    [SerializeField] private Text musicText, soundText;
+    [SerializeField] private Text musicText, soundText, music2Text, sound2Text, sliderText1, sliderText2;
 
 
     public QuizManager quizmanager;
 
-    public AudioSource correctSound, incorrectSound, gameover, setBGM;
+    public AudioSource correctSound, incorrectSound, buttonSound, gameover, setBGM;
 
     public AudioClip menuBGM, gameBGM;
 
+    public Slider slider1, slider2;
+
     public bool musicEnabled = true, soundEnabled = true;
 
-    public int musicVolume, soundVolume;
+    public int musicVolumeToggle, soundVolumeToggle;
 
     private float fadeTime = 2f;
 
     public Text MusicText {get {return musicText;}}
+    public Text Music2Text {get {return music2Text;}}
     public Text SoundText {get {return soundText;}}
+    public Text Sound2Text {get {return sound2Text;}}
+    public Text SliderText {get {return sliderText1;}}
+    public Text Slider2Text {get {return sliderText2;}}
 
     void Start()
     {
         setBGM.clip = menuBGM;
         setBGM.Play();
 
-        if (PlayerPrefs.HasKey("musicVolume"))
+        slider1.value = PlayerPrefs.GetFloat("musicVolumeSlider", 0.75f);
+        slider2.value = PlayerPrefs.GetFloat("soundVolumeSlider", 0.75f);
+
+        if (PlayerPrefs.HasKey("musicVolumeToggle"))
         {
-            musicVolume = PlayerPrefs.GetInt("musicVolume");
+            musicVolumeToggle = PlayerPrefs.GetInt("musicVolumeToggle");
         }
 
-        if (PlayerPrefs.HasKey("soundVolume"))
+        if (PlayerPrefs.HasKey("soundVolumeToggle"))
         {
-            soundVolume = PlayerPrefs.GetInt("soundVolume");
+            soundVolumeToggle = PlayerPrefs.GetInt("soundVolumeToggle");
         }
 
     }
@@ -60,7 +70,7 @@ public class QuizAudio : MonoBehaviour
     public void MenutoGameBGM()
     {
         setBGM.clip = gameBGM;
-        if (musicVolume == 1)
+        if (musicVolumeToggle == 1)
         {
             StartCoroutine(FadeIn(setBGM, fadeTime));
         }
@@ -68,7 +78,7 @@ public class QuizAudio : MonoBehaviour
     public void BacktoMenuBGM()
     {
         setBGM.clip = menuBGM;
-        if (musicVolume == 1)
+        if (musicVolumeToggle == 1)
         {
             StartCoroutine(FadeIn(setBGM, fadeTime));
         }
@@ -87,7 +97,7 @@ public class QuizAudio : MonoBehaviour
         }
     }
 
-    //Enable/Disable Music and Sound Effects
+    //Toggle Music and Sound Effects
 
     public void ToggleMusic()
     {
@@ -95,15 +105,17 @@ public class QuizAudio : MonoBehaviour
         {
             musicEnabled = false;
             MusicText.text = "Music: OFF";
+            Music2Text.text = "Music: OFF";
             setBGM.volume = 0;
-            musicVolume = 0;
+            musicVolumeToggle = 0;
         }
         else
         {
             musicEnabled = true;
             MusicText.text = "Music: ON";
+            Music2Text.text = "Music: ON";
             setBGM.volume = 1;
-            musicVolume = 1;
+            musicVolumeToggle = 1;
         }
 
     }
@@ -114,40 +126,64 @@ public class QuizAudio : MonoBehaviour
         {
             soundEnabled = false;
             SoundText.text = "Sound: OFF";
+            Sound2Text.text = "Sound: OFF";
             correctSound.volume = 0;
             incorrectSound.volume = 0;
+            buttonSound.volume = 0;
             gameover.volume = 0;
-            soundVolume = 0;
+            soundVolumeToggle = 0;
         }
         else
         {
             soundEnabled = true;
             SoundText.text = "Sound: ON";
+            Sound2Text.text = "Soundc: ON";
             correctSound.volume = 1;
             incorrectSound.volume = 1;
+            buttonSound.volume = 1;
             gameover.volume = 1;
-            soundVolume = 1;
+            soundVolumeToggle = 1;
         }
 
     }
 
+    //Slider Settings
+
+    public void SliderMusicVolume()
+    {
+        float slider1Value = slider1.value;
+        setBGM.volume = slider1Value;
+        sliderText1.text = Math.Round(slider1Value, 2) * 100 + " %";
+        PlayerPrefs.SetFloat("musicVolumeSlider", slider1Value);
+    }
+
+    public void SliderSoundVolume()
+    {
+        float slider2Value = slider2.value;
+        correctSound.volume = slider2Value;
+        incorrectSound.volume = slider2Value;
+        buttonSound.volume = slider2Value;
+        gameover.volume = slider2Value;
+        sliderText2.text = Math.Round(slider2Value, 2) * 100 + " %";
+        PlayerPrefs.SetFloat("soundVolumeSlider", slider2Value);
+    }
 
     //Save and Load Settings
     public void SaveAudioSettings()
     {
-        PlayerPrefs.SetInt("musicVolume", musicVolume);
-        PlayerPrefs.SetInt("soundVolume", soundVolume);
+        PlayerPrefs.SetInt("musicVolumeToggle", musicVolumeToggle);
+        PlayerPrefs.SetInt("soundVolumeToggle", soundVolumeToggle);
         PlayerPrefs.Save();
     }
 
     public void LoadAudioSettings()
     {
         
-        musicVolume = PlayerPrefs.GetInt("musicVolume", 1);
-        soundVolume = PlayerPrefs.GetInt("soundVolume", 1);
+        musicVolumeToggle = PlayerPrefs.GetInt("musicVolumeToggle", 1);
+        soundVolumeToggle = PlayerPrefs.GetInt("soundVolumeToggle", 1);
 
 
-        if (musicVolume == 1)
+        if (musicVolumeToggle == 1)
         {
             musicEnabled = true;
             MusicText.text = "Music: ON";
@@ -160,13 +196,14 @@ public class QuizAudio : MonoBehaviour
             setBGM.volume = 0;
         }
 
-        if (soundVolume == 1)
+        if (soundVolumeToggle == 1)
         {
             soundEnabled = true;
             SoundText.text = "Sound: ON";
             correctSound.volume = 1;
             incorrectSound.volume = 1;
             gameover.volume = 1;
+            buttonSound.volume = 1;
         }
         else
         {
@@ -175,6 +212,7 @@ public class QuizAudio : MonoBehaviour
             correctSound.volume = 0;
             incorrectSound.volume = 0;
             gameover.volume = 0;
+            buttonSound.volume = 0;
         }
 
     }

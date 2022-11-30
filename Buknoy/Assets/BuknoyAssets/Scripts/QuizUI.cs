@@ -10,11 +10,12 @@ public class QuizUI : MonoBehaviour
     [SerializeField] public QuizResultsManager quizresults;
     
 
-    [SerializeField] public GameObject confirmexitPanel, confirmdeletePanel, pausePanel;
+    [SerializeField] public GameObject confirmexitPanel, confirmdeletePanel, pausePanel, settingsPanel;
 
     public GameObject PausePanel {get {return pausePanel;}}
     public GameObject ConfirmExitPanel {get {return confirmexitPanel;}}
     public GameObject ConfirmDeletePanel {get {return confirmdeletePanel;}}
+    public GameObject SettingsPanel {get {return settingsPanel;}}
 
     
     //Quiz Hub Buttons
@@ -52,6 +53,10 @@ public class QuizUI : MonoBehaviour
     {
         quizmanager.quizResultsPanel.SetActive(true);
         quizmanager.ViewResults();
+    }
+    public void ButtonSettingsClick() //View Settings
+    {
+       SettingsPanel.SetActive(true);
     }
     public void BacktoQuizHub()
     {
@@ -95,6 +100,7 @@ public class QuizUI : MonoBehaviour
     {
         Invoke("LoadQuizScene", 2f);
     }
+    //Quiz Results Buttons
     public void ConfirmDeleteButton()
     {
         ConfirmDeletePanel.SetActive(true);
@@ -114,5 +120,11 @@ public class QuizUI : MonoBehaviour
             quizmanager.QuizStreak[i].text = "HIGHEST STREAK:\n 0";
         }
         Debug.Log("File deleted!");
+    }
+
+    // Quiz Settings Buttons
+    public void BacktoMenuHub2()
+    {
+        SettingsPanel.SetActive(false);
     }
 }
