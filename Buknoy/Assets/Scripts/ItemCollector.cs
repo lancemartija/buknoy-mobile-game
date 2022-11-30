@@ -17,4 +17,6 @@ public class ItemCollector : MonoBehaviour
             CollectibleText.text = "Pages: " + squares;
         }
     }
+
+    
 }
