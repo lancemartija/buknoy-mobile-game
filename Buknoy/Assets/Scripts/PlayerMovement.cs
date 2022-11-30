@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private enum MovementState { idle, running, jumping, falling }
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private LayerMask jumpableGround;
+    
 
     // Start is called before the first frame update
     void Start()

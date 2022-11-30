@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/MenuHub.unity
+    guid: 2af3a1184efff1d43bae8414de48d387
+  - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: c8b89ae37e77c7e44bc7c3033b776270
   - enabled: 1
-    path: Assets/Scenes/MenuHub.unity
-    guid: 2af3a1184efff1d43bae8414de48d387
+    path: Assets/Scenes/Levels/Quizzes.unity
+    guid: 8d61eeb401a89ef45aa4c08e25a8854e
   - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
     guid: 4683a4aeda0cc80408d2d65e7c7856ea
@@ -21,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Prologue.unity
     guid: bfa9ad4277e45cc4aa9e7db57f5c5db6
   - enabled: 1
-    path: Assets/Scenes/Levels/Quizzes.unity
-    guid: 8d61eeb401a89ef45aa4c08e25a8854e
+    path: Assets/Scenes/Levels/Chapter 1.unity
+    guid: 6902ca76fea4a2a43b6cf639950f8e98
   m_configObjects: {}

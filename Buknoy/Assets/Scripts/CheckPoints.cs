@@ -10,9 +10,9 @@ public class CheckPoints : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
     void OnTriggerEnter2D(Collider2D other){
-        if(other.CompareTag("Player")){
+        if(other.CompareTag("Player"))
+        {
             gm.lastCheckPointPos = transform.position;
-
         }
     }
 }

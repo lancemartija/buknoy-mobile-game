@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - square
   - Trap
   - GM
+  - Page
   layers:
   - Default
   - TransparentFX

@@ -9,13 +9,13 @@ public class LevelsUnlock : MonoBehaviour
 
     void Start()
     {
-        foreach(Button b in levelButtons)
-            b.interactable = false;
+       int levelAt = PlayerPrefs.GetInt("levelAt", 2);
 
-        int reachedLevel = PlayerPrefs.GetInt("ReachedLevel", 1);
-
-        for(int i = 0; i < reachedLevel; i++)
-            levelButtons[i].interactable = true;
+       for (int i = 0; i < levelButtons.Length; i++)
+       {
+            if (i + 2 > levelAt)
+                levelButtons[i].interactable = false;
+       }
 
     }
 }

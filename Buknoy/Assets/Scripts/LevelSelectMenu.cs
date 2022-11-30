@@ -65,7 +65,7 @@ public class LevelSelectMenu : MonoBehaviour
     }
     public void GoToLevel1()
     {
-        SceneManager.LoadScene("Prologue");
+        SceneManager.LoadScene("Chapter 1");
         Time.timeScale = 1;
     }
     public void GoToLevel2()

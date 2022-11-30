@@ -35,8 +35,18 @@ public class AIPatrol : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+
+        }
+        else
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(enmyRigidbody.velocity.x)), transform.localScale.y);
+        }
+    }
+     private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
             collision.GetComponent<Health>().TakeDamage(damage);
         }
-        transform.localScale = new Vector2(-(Mathf.Sign(enmyRigidbody.velocity.x)), transform.localScale.y);
     }
 }
