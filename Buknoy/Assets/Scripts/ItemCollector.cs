@@ -30,6 +30,7 @@ public class ItemCollector : MonoBehaviour
     {
         if(Pages == 5)
         {
+            
             SceneManager.LoadScene(nextSceneLoad);
 
             if(nextSceneLoad > PlayerPrefs.GetInt("levelAt"))

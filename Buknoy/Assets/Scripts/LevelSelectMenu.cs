@@ -70,12 +70,12 @@ public class LevelSelectMenu : MonoBehaviour
     }
     public void GoToLevel2()
     {
-        SceneManager.LoadScene("Prologue");
+        SceneManager.LoadScene("Chapter 2");
         Time.timeScale = 1;
     }
     public void GoToLevel3()
     {
-        SceneManager.LoadScene("Prologue");
+        SceneManager.LoadScene("Chapter 3");
         Time.timeScale = 1;
     }
 }
