@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8794ded8c145ece4cac8a574f718e074, type: 3}
+  m_Name: Quiz4Data
+  m_EditorClassIdentifier: 
+  questions:
+  - fact: St. La Salle gave away his fortunes to help the poor.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: 'La Salle is known as the Patron Saint of Doctors. '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 0
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: 'La Salle is the youngest brother in his family. '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 0
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: 'La Salle helped the poor through his free teaching. '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers: []
+    correctAnswer: 
+  - fact: La Salle had a doctor's degree on Theology.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: Due to his legacy as an educator, La Salle is remembered as the ____ of
+      Teachers.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Patron Saint
+    - Brother
+    - Patron Bishop
+    - Pope
+    correctAnswer: Patron Saint
+  - fact: 'As La Salle wanted poor children in France to have good education, which
+      language did he use to teach them? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - German
+    - Spanish
+    - English
+    - French
+    correctAnswer: French
+  - fact: 'Because of his work, La Salle is also known as the Father of ____? '
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - 'Modern Science '
+    - Modern Math
+    - Modern Arts
+    - Modern Education
+    correctAnswer: Modern Education
+  - fact: "The phrase \u201Cteaching minds and touching hearts\u201D is related to
+      the core principle Quality Education."
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: La Salle reminded his fellow Brothers to see Jesus Christ in all their
+      pupils. This is an example of which Lasallian core principle?
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Inclusive Community
+    - Faith in God's Presence
+    - Inclusive Community
+    - Respect for all Persons
+    correctAnswer: Respect for all Persons
+  - fact: La Salle reached out to young and uneducated men so that he could train
+      them into teachers. This is an example of the core principle, Faith in God's
+      Presence.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 0
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: Even though some teachers left La Salle, La Salle did not give up on his
+      work, as he believed in God. This is an example of which Lasallian core principle?
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Faith in God's Presence
+    - Inclusive Community
+    - Communion
+    - Respect for all Persons
+    correctAnswer: Faith in God's Presence
+  - fact: After La Salle survived a snowstorm, he became grateful of God's mercy
+      and protection. This is an example of which Lasallian core princple?
+    questionImage: {fileID: 21300000, guid: 6ceb552336e3bb341b4a19b2d96554bb, type: 3}
+    needsImage: 1
+    isTrueorFalse: 0
+    isMultipleChoice: 1
+    isTrue: 0
+    answers:
+    - Faith in God's Presence
+    - Quality Education
+    - Respect for all Persons
+    - Inclusive Community
+    correctAnswer: Faith in God's Presence
+  - fact: La Salle had a great love for the poor, especially the children who believed
+      they had no future.
+    questionImage: {fileID: 21300000, guid: 2a4e3784d0d63b44aa836d1ca00cbcf8, type: 3}
+    needsImage: 1
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 
+  - fact: La Salle's legacy lives on today, as there are many schools named after
+      him.
+    questionImage: {fileID: 0}
+    needsImage: 0
+    isTrueorFalse: 1
+    isMultipleChoice: 0
+    isTrue: 1
+    answers:
+    - N/A
+    - N/A
+    - N/A
+    - N/A
+    correctAnswer: 

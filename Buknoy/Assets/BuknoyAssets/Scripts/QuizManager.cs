@@ -54,12 +54,12 @@ public class QuizManager : MonoBehaviour
     streakCount = 0;
     
     quizChoice = index;
-    currentTimer = timeLimit;
 
     switch (quizChoice)
     {
       case 0: //Tutorial; Timer does not count down
         maxQuestions = 4;
+        currentTimer = timeLimit;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
@@ -68,10 +68,13 @@ public class QuizManager : MonoBehaviour
         break;
       case 1: // Quiz 1, True or False only
         maxQuestions = 5; //5
+        currentTimer = timeLimit;
         gamestatus = GameStatus.Playing;
+
         break;
       case 2: //Quiz 2, Multiple Choice only
         maxQuestions = 7; //7
+        currentTimer = timeLimit;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
@@ -81,6 +84,17 @@ public class QuizManager : MonoBehaviour
         break;
       case 3://Quiz 3, Multiple Choice and True or False
         maxQuestions = 7; //7
+        currentTimer = timeLimit;
+        for (int i = 0; i < choiceMultiple.Count; i++)
+        {
+            Button localBtn = choiceMultiple[i];
+            localBtn.onClick.AddListener(() => MultipleOnClick(localBtn));
+        }
+        gamestatus = GameStatus.Playing;
+        break;
+      case 4://Quiz 4, Multiple Choice and True or False; most questions with extra time
+        maxQuestions = 10; //10
+        currentTimer = 90;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
