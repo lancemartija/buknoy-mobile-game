@@ -49,6 +49,14 @@ public class QuizUI : MonoBehaviour
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
     }
+
+    public void Button4Click()
+    {
+        quizmanager.StartGame(4);
+        quizmanager.Load();
+        quizmanager.mainmenuPanel.SetActive(false);
+        quizmanager.quizPanel.SetActive(true);
+    }
     public void ButtonResultsClick() //View Results
     {
         quizmanager.quizResultsPanel.SetActive(true);
