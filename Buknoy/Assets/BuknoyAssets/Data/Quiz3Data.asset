@@ -40,8 +40,8 @@ MonoBehaviour:
     correctAnswer: 
   - fact: 'La Salle and the Brothers made a Heroic Vow that they will maintain the
       Institute they made. This is an example of which Lasallian core principle? '
-    questionImage: {fileID: 0}
-    needsImage: 0
+    questionImage: {fileID: 21300000, guid: b51f0234967f5c940a76e77288cddf74, type: 3}
+    needsImage: 1
     isTrueorFalse: 0
     isMultipleChoice: 1
     isTrue: 0
