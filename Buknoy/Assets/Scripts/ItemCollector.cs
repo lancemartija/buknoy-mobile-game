@@ -22,7 +22,7 @@ public class ItemCollector : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Pages++;
-            CollectibleText.text = "Pages: " + Pages;
+            CollectibleText.text = Pages + " / 5 Pages";
         }
     }
 
