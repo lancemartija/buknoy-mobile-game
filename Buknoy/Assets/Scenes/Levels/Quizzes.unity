@@ -1207,8 +1207,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.9467, y: 64}
-  m_SizeDelta: {x: 506.3734, y: 50.734}
+  m_AnchoredPosition: {x: -6.3649, y: 88}
+  m_SizeDelta: {x: 519.6968, y: 57.3957}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214964045
 MonoBehaviour:
@@ -1474,7 +1474,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 219333720}
   m_OnClick:
     m_PersistentCalls:
@@ -1553,7 +1553,7 @@ GameObject:
   - component: {fileID: 226153725}
   - component: {fileID: 226153727}
   m_Layer: 0
-  m_Name: CutsceneManager
+  m_Name: TransitionAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1583,9 +1583,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226153724}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33, y: 44, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2024562076}
@@ -1602,7 +1602,7 @@ Animator:
   m_GameObject: {fileID: 226153724}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b4eff1c0427b5624bb467ec5d71ca057, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1af39f60b16c1914e95e6f7802dd2df6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2909,7 +2909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -218.70847, y: -20}
+  m_AnchoredPosition: {x: -218.7085, y: -20}
   m_SizeDelta: {x: -533.4169, y: 56.2629}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &322624812
@@ -3202,6 +3202,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizmanager: {fileID: 1456424181}
   quizresults: {fileID: 271373975}
+  transition: {fileID: 226153727}
+  HubButtons:
+  - {fileID: 513632858}
+  - {fileID: 1406341837}
+  - {fileID: 533597035}
+  - {fileID: 1886780849}
+  - {fileID: 536992261}
+  - {fileID: 219333719}
+  - {fileID: 1062458389}
+  - {fileID: 2109844370}
+  ExitButtons:
+  - {fileID: 955085209}
+  - {fileID: 1890907981}
+  - {fileID: 1008097941}
   confirmexitPanel: {fileID: 1766030475}
   confirmdeletePanel: {fileID: 1364437888}
   pausePanel: {fileID: 243617371}
@@ -3401,9 +3415,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510165142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2024562076}
@@ -3411,8 +3425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 280}
-  m_SizeDelta: {x: 1057.2, y: 100}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 2000, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &510165144
 MonoBehaviour:
@@ -3575,7 +3589,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 513632859}
   m_OnClick:
     m_PersistentCalls:
@@ -3933,7 +3947,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 533597036}
   m_OnClick:
     m_PersistentCalls:
@@ -4111,7 +4125,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 536992262}
   m_OnClick:
     m_PersistentCalls:
@@ -5847,9 +5861,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795603298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.9999998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2024562076}
@@ -5857,8 +5871,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -280}
-  m_SizeDelta: {x: 1057.2, y: 100}
+  m_AnchoredPosition: {x: 0, y: -200}
+  m_SizeDelta: {x: 2000, y: 440}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &795603300
 MonoBehaviour:
@@ -7864,7 +7878,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1062458390}
   m_OnClick:
     m_PersistentCalls:
@@ -9825,7 +9839,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1406341838}
   m_OnClick:
     m_PersistentCalls:
@@ -12016,7 +12030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -218.70847, y: -64}
+  m_AnchoredPosition: {x: -218.7085, y: -64}
   m_SizeDelta: {x: -533.4169, y: 56.2629}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1732848023
@@ -12302,7 +12316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1766030476
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13483,7 +13497,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1886780850}
   m_OnClick:
     m_PersistentCalls:
@@ -14683,10 +14697,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -14703,8 +14717,8 @@ Canvas:
   m_GameObject: {fileID: 2024562075}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -15404,7 +15418,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2109844371}
   m_OnClick:
     m_PersistentCalls:
