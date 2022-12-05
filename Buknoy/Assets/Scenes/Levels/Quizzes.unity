@@ -1558,7 +1558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &226153725
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -3202,6 +3202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quizmanager: {fileID: 1456424181}
   quizresults: {fileID: 271373975}
+  quizaudio: {fileID: 827386716}
   transition: {fileID: 226153727}
   HubButtons:
   - {fileID: 513632858}
@@ -12316,7 +12317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1766030476
 RectTransform:
   m_ObjectHideFlags: 0

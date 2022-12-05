@@ -8,6 +8,7 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] public QuizManager quizmanager;
     [SerializeField] public QuizResultsManager quizresults;
+    [SerializeField] public QuizAudio quizaudio;
 
     [SerializeField] Animator transition;
 
@@ -106,6 +107,7 @@ public class QuizUI : MonoBehaviour
     public void BacktoMenuHub()
     {
         transition.SetTrigger("In");
+        quizaudio.EndMusic();
         Invoke("DisableButtons", 0.2f);
         Invoke("LoadMenuHub", 2f);
     }

@@ -96,6 +96,12 @@ public class QuizAudio : MonoBehaviour
             setBGM.Play();
         }
     }
+    //Fade Out when switching back to Menu Hub
+    public void EndMusic()
+    {
+        StartCoroutine(FadeOut(setBGM, fadeTime));
+    }
+
 
     //Toggle Music and Sound Effects
 
