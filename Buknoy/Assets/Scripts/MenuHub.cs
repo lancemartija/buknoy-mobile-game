@@ -19,4 +19,8 @@ public class MenuHub : MonoBehaviour
     {
         SceneManager.LoadScene("LevelSelect");
     }
+    public void GoToViewInfo()
+    {
+        SceneManager.LoadScene("Notes");
+    }
 }
