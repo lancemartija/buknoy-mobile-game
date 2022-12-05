@@ -8,6 +8,11 @@ public class QuizUI : MonoBehaviour
 {
     [SerializeField] public QuizManager quizmanager;
     [SerializeField] public QuizResultsManager quizresults;
+    [SerializeField] public QuizAudio quizaudio;
+
+    [SerializeField] Animator transition;
+
+    [SerializeField] private List<Button> HubButtons, ExitButtons;
     
 
     [SerializeField] public GameObject confirmexitPanel, confirmdeletePanel, pausePanel, settingsPanel;
@@ -17,7 +22,36 @@ public class QuizUI : MonoBehaviour
     public GameObject ConfirmDeletePanel {get {return confirmdeletePanel;}}
     public GameObject SettingsPanel {get {return settingsPanel;}}
 
-    
+    //Transition
+    void Start()
+    {
+        transition.SetTrigger("Out");
+        Invoke("EnableButtons", 0.7f);
+    }
+    void EnableButtons()
+    {
+        for (int i = 0; i < HubButtons.Count; i++)
+        {
+            Button button = HubButtons[i];
+            button.interactable = true;
+        }
+    }
+    void DisableButtons()
+    {
+        for (int i = 0; i < HubButtons.Count; i++)
+        {
+            Button button = HubButtons[i];
+            button.interactable = false;
+        }
+    }
+    void DisableButtons2()
+    {
+        for (int i = 0; i < ExitButtons.Count; i++)
+        {
+            Button button = ExitButtons[i];
+            button.interactable = false;
+        }
+    }
     //Quiz Hub Buttons
     public void Button0Click()
     {
@@ -72,6 +106,9 @@ public class QuizUI : MonoBehaviour
     }
     public void BacktoMenuHub()
     {
+        transition.SetTrigger("In");
+        quizaudio.EndMusic();
+        Invoke("DisableButtons", 0.2f);
         Invoke("LoadMenuHub", 2f);
     }
     //Load other Scenes after 2 seconds
@@ -106,6 +143,8 @@ public class QuizUI : MonoBehaviour
 
     public void RetryButton ()
     {
+        transition.SetTrigger("In");
+        Invoke("DisableButtons2", 0.2f);
         Invoke("LoadQuizScene", 2f);
     }
     //Quiz Results Buttons

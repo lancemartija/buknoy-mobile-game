@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/MenuHub.unity
-    guid: 2af3a1184efff1d43bae8414de48d387
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: c8b89ae37e77c7e44bc7c3033b776270
+  - enabled: 1
+    path: Assets/Scenes/MenuHub.unity
+    guid: 2af3a1184efff1d43bae8414de48d387
   - enabled: 1
     path: Assets/Scenes/Levels/Quizzes.unity
     guid: 8d61eeb401a89ef45aa4c08e25a8854e
@@ -32,16 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Chapter 3.unity
     guid: d3fb2a81f56b2b540a1e29dabea4cf65
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Levels/Notes.unity
+    guid: cdac1f6a1f133d244ac68268a1dcb48f
   m_configObjects: {}
