@@ -17,15 +17,17 @@ public class NotesUI : MonoBehaviour
     public Text QuizLabelText {get {return quizlblText;}}
     public GameObject NotesPanel {get {return notesPanel;}}
     public GameObject InventoryPanel {get {return inventoryPanel;}}
+    [SerializeField] private float loadingtime = 1f;
 
     //Transition
     void Start()
     {
-        transition.SetTrigger("Out");
-        Invoke("EnableButtons", 0.7f);
+        StartCoroutine(InitializeScene());
     }
-    void EnableButtons()
+    IEnumerator InitializeScene()
     {
+        yield return new WaitForSeconds(loadingtime);
+        transition.SetTrigger("Out"); //Transition
         for (int i = 0; i < HubButtons.Count; i++)
         {
             Button button = HubButtons[i];

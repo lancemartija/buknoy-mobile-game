@@ -9,6 +9,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] public QuizManager quizmanager;
     [SerializeField] public QuizResultsManager quizresults;
     [SerializeField] public QuizAudio quizaudio;
+    [SerializeField] private float loadingtime = 1f;
 
     [SerializeField] Animator transition;
 
@@ -25,11 +26,13 @@ public class QuizUI : MonoBehaviour
     //Transition
     void Start()
     {
-        transition.SetTrigger("Out");
-        Invoke("EnableButtons", 0.7f);
+        StartCoroutine(InitializeScene());
     }
-    void EnableButtons()
+    
+    IEnumerator InitializeScene()
     {
+        yield return new WaitForSeconds(loadingtime);
+        transition.SetTrigger("Out"); //Transition Scene
         for (int i = 0; i < HubButtons.Count; i++)
         {
             Button button = HubButtons[i];

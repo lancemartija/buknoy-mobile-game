@@ -22,5 +22,6 @@ public class MenuHub : MonoBehaviour
     public void GoToViewInfo()
     {
         SceneManager.LoadScene("Notes");
+        Time.timeScale = 1;
     }
 }
