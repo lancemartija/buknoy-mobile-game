@@ -2909,7 +2909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -218.7085, y: -20}
+  m_AnchoredPosition: {x: -218.70847, y: -20}
   m_SizeDelta: {x: -533.4169, y: 56.2629}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &322624812
@@ -6143,7 +6143,7 @@ MonoBehaviour:
   buttonSound: {fileID: 1805487829}
   gameover: {fileID: 1948730642}
   setBGM: {fileID: 2998109}
-  menuBGM: {fileID: 8300000, guid: 4cf01c8d4dec35445a2bc764e0572f54, type: 3}
+  menuBGM: {fileID: 8300000, guid: bd82fb6796ecc234291df5f257660a8b, type: 3}
   gameBGM: {fileID: 8300000, guid: 84fb05f50e6545741a8368b4205aa902, type: 3}
   slider1: {fileID: 557991138}
   slider2: {fileID: 2033718428}
@@ -9678,7 +9678,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 988982907
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1389991766
@@ -12031,7 +12031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -218.7085, y: -64}
+  m_AnchoredPosition: {x: -218.70847, y: -64}
   m_SizeDelta: {x: -533.4169, y: 56.2629}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1732848023
