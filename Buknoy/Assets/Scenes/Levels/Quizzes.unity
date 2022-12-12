@@ -151,7 +151,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2171,6 +2171,7 @@ MonoBehaviour:
   quizmanager: {fileID: 1456424181}
   quizresultslist:
     resultslist: []
+  loadingtime: 2
 --- !u!4 &271373976
 Transform:
   m_ObjectHideFlags: 0
@@ -2704,7 +2705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -549.0001, y: 79.01399}
+  m_AnchoredPosition: {x: -549.0002, y: 79.01399}
   m_SizeDelta: {x: -1276.1174, y: -389.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309083583

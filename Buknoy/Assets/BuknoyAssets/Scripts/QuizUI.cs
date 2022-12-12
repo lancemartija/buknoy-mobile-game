@@ -9,7 +9,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] public QuizManager quizmanager;
     [SerializeField] public QuizResultsManager quizresults;
     [SerializeField] public QuizAudio quizaudio;
-    [SerializeField] private float loadingtime = 1f;
+    [SerializeField] private float loadingtime = 2f;
 
     [SerializeField] Animator transition;
 

@@ -17,7 +17,7 @@ public class NotesUI : MonoBehaviour
     public Text QuizLabelText {get {return quizlblText;}}
     public GameObject NotesPanel {get {return notesPanel;}}
     public GameObject InventoryPanel {get {return inventoryPanel;}}
-    [SerializeField] private float loadingtime = 1f;
+    [SerializeField] private float loadingtime = 2f;
 
     //Transition
     void Start()

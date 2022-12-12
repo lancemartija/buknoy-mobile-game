@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuHub : MonoBehaviour
 {
-
+    
     public void GoToMenu()
     {
         SceneManager.LoadScene("StartMenu");
     }
     public void GoToQuiz()
     {
-        SceneManager.LoadScene("Quizzes");
+        SceneManager.LoadSceneAsync("Quizzes");
         Time.timeScale = 1;
     }
     public void GoToLevelSelect()
@@ -21,7 +21,7 @@ public class MenuHub : MonoBehaviour
     }
     public void GoToViewInfo()
     {
-        SceneManager.LoadScene("Notes");
+        SceneManager.LoadSceneAsync("Notes");
         Time.timeScale = 1;
     }
 }

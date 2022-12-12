@@ -9,9 +9,24 @@ public class QuizResultsManager : MonoBehaviour
     [SerializeField] public QuizManager quizmanager;
     public static QuizResultsManager instance;
     public QuizResultsList quizresultslist;
-
+    [SerializeField] private float loadingtime = 2f;
     void Start()
     {
+        StartCoroutine(FileCreate());
+    }
+
+    void Awake()
+    {
+        instance = this;
+        if (!Directory.Exists(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults");
+        }
+    }
+
+    IEnumerator FileCreate()
+    {
+        yield return new WaitForSeconds(loadingtime);
         if (File.Exists(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults/QuizResults.xml"))
         {
             Debug.Log("High Scores already exist!");
@@ -24,15 +39,6 @@ public class QuizResultsManager : MonoBehaviour
             quizmanager.SetDefaultResults(0, 0, 4);
             quizmanager.Save();
             Debug.Log("High Score file created!");
-        }
-    }
-
-    void Awake()
-    {
-        instance = this;
-        if (!Directory.Exists(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults"))
-        {
-            Directory.CreateDirectory(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults");
         }
     }
     public void SaveScores(List<QuizResults> results)
