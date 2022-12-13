@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  iframesDuration: 1
+  numberofFlashes: 3
 --- !u!61 &3753021527521044491
 BoxCollider2D:
   m_ObjectHideFlags: 0

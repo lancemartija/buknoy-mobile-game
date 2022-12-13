@@ -90585,6 +90585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  iframesDuration: 1
+  numberofFlashes: 3
 --- !u!1 &1101365203
 GameObject:
   m_ObjectHideFlags: 0
