@@ -1,31 +1,7 @@
 fileFormatVersion: 2
-guid: e242b62e7e6caee439fa1d024a8fa5bb
+guid: 4a99b7ec4cddb864dabef22656acbbc4
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3932816638193255715
-    second: Brown On (32x8)_0
-  - first:
-      213: 113249620649802049
-    second: Brown On (32x8)_1
-  - first:
-      213: -3965723481977160693
-    second: Brown On (32x8)_2
-  - first:
-      213: -8422671310359681190
-    second: Brown On (32x8)_3
-  - first:
-      213: 6027122724756182200
-    second: Brown On (32x8)_4
-  - first:
-      213: 3059113826426795209
-    second: Brown On (32x8)_5
-  - first:
-      213: 4722360788381041880
-    second: Brown On (32x8)_6
-  - first:
-      213: -7345710839297778315
-    second: Brown On (32x8)_7
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -57,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -71,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 6
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -86,15 +62,15 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
-  cookieLightType: 1
+  applyGammaDecoding: 0
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -118,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -141,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Brown On (32x8)_0
+      name: Idle_Fly_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 8
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,62 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f1b4d0812a0bbc46930c942a83357ed
-      internalID: -3932816638193255715
+      spriteID: 2adb02df4261d7f44908e8aad6415af2
+      internalID: 1240946567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 495d82b1c6479594db3235fb6e3cf7ec
-      internalID: 113249620649802049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Brown On (32x8)_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 161ab562e71e8cf41ab685ca081c8c85
-      internalID: -3965723481977160693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Brown On (32x8)_3
+      name: Idle_Fly_1
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 8
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,62 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdbe1cf63db6cb745a3148e6cfd706d9
-      internalID: -8422671310359681190
+      spriteID: 98016216d8eedcc4c9fa5b56d7840537
+      internalID: 812979511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb0afa4b7d958a64ea0c4f0fc26d4e89
-      internalID: 6027122724756182200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Brown On (32x8)_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09dc1b7a40dcba0499692a384b5bf65d
-      internalID: 3059113826426795209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Brown On (32x8)_6
+      name: Idle_Fly_2
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 32
-        height: 8
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2ba88b9d5c10524bb960adf9d485311
-      internalID: 4722360788381041880
+      spriteID: 521c8dcf29eb4cc44a14ab26305e9c32
+      internalID: -1311399267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Brown On (32x8)_7
+      name: Idle_Fly_3
       rect:
         serializedVersion: 2
-        x: 224
+        x: 288
         y: 0
-        width: 32
-        height: 8
+        width: 96
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,8 +194,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11319983793eba34b92fa0b4a7ca6a6f
-      internalID: -7345710839297778315
+      spriteID: 05051f062e59b16449bb11c96780006e
+      internalID: 12227111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Fly_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbbbe125a611a0543958ad4acb86f728
+      internalID: 86998083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle_Fly_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a196a51e12f274ab6e1b3e8d2e5280
+      internalID: -1729344800
       vertices: []
       indices: 
       edges: []
@@ -312,21 +246,19 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Brown On (32x8)_5: 3059113826426795209
-      Brown On (32x8)_4: 6027122724756182200
-      Brown On (32x8)_6: 4722360788381041880
-      Brown On (32x8)_1: 113249620649802049
-      Brown On (32x8)_0: -3932816638193255715
-      Brown On (32x8)_3: -8422671310359681190
-      Brown On (32x8)_7: -7345710839297778315
-      Brown On (32x8)_2: -3965723481977160693
+      Idle_Fly_3: 12227111
+      Idle_Fly_2: -1311399267
+      Idle_Fly_5: -1729344800
+      Idle_Fly_0: 1240946567
+      Idle_Fly_1: 812979511
+      Idle_Fly_4: 86998083
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

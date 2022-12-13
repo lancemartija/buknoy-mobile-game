@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour
 
     private Path path;
     private int currentWaypoint = 0;
-    bool isGrounded = false;
+    RaycastHit2D isGrounded;
     Seeker seeker;
     Rigidbody2D rb;
 
@@ -38,7 +38,7 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(TargetInDistance() && followEnabled)
+        if (TargetInDistance() && followEnabled)
         {
             PathFollow();
         }
@@ -46,13 +46,13 @@ public class EnemyAI : MonoBehaviour
 
     private void UpdatePath()
     {
-        if(followEnabled && TargetInDistance() && seeker.IsDone())
+        if (followEnabled && TargetInDistance() && seeker.IsDone())
         {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
         }
     }
 
-        private void PathFollow()
+    private void PathFollow()
     {
         if (path == null)
         {
@@ -83,17 +83,8 @@ public class EnemyAI : MonoBehaviour
         }
 
         // Movement
-        rb.AddForce(Vector2.right * direction, ForceMode2D.Impulse);
+        rb.AddForce(force);
 
-         if (rb.velocity.x> speed)
-         {
-             rb.velocity = new Vector2(speed, rb.velocity.y);
-         }
-         else if (rb.velocity.x <speed*(-1))
-         {
-             rb.velocity = new Vector2(speed*(-1), rb.velocity.y);
-         }
-         
         // Next Waypoint
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if (distance < nextWaypointDistance)
@@ -128,5 +119,4 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint = 0;
         }
     }
-
 }
