@@ -60,22 +60,46 @@ public class LevelSelectMenu : MonoBehaviour
     }
     public void GoToPrologue()
     {
-        SceneManager.LoadScene("Prologue");
-        Time.timeScale = 1;
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
+        Invoke("LoadLevel0", 2f);
     }
     public void GoToLevel1()
     {
-        SceneManager.LoadScene("Chapter 1");
-        Time.timeScale = 1;
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
+        Invoke("LoadLevel1", 2f);
     }
     public void GoToLevel2()
     {
-        SceneManager.LoadScene("Chapter 2");
-        Time.timeScale = 1;
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
+        Invoke("LoadLevel2", 2f);
     }
     public void GoToLevel3()
     {
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
+        Invoke("LoadLevel3", 2f);
+    }
+    void LoadLevel0()
+    {
+        SceneManager.LoadScene("Prologue");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(0);
+        Time.timeScale = 1;
+    }
+     void LoadLevel1()
+    {
+        SceneManager.LoadScene("Chapter 1");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(1);
+        Time.timeScale = 1;
+    }
+     void LoadLevel02()
+    {
+         SceneManager.LoadScene("Chapter 2");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(2);
+        Time.timeScale = 1;
+    }
+    void LoadLevel3()
+    {
         SceneManager.LoadScene("Chapter 3");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(3);
         Time.timeScale = 1;
     }
 }

@@ -25,6 +25,7 @@ public class QuizManager : MonoBehaviour
   [SerializeField] private float timeBetweenQuestions = 2.5f, timeLimit = 60;
   [SerializeField] Animator animator;
   [SerializeField] public QuizAudio quizaudio;
+  [SerializeField] public AudioSettings audiosettings;
 
   public List <QuizResults> results = new List<QuizResults>();
   
@@ -103,8 +104,8 @@ public class QuizManager : MonoBehaviour
         gamestatus = GameStatus.Playing;
         break;
     }
-    quizaudio.LoadAudioSettings();
-    quizaudio.MenutoGameBGM();
+    quizaudio.LoadSFXSettings();
+    GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().QuizMenutoQuizGameBGM();
     unansweredQuestions = quizData[index].questions.ToList<Question>();
     SetCurrentQuestion();
   }

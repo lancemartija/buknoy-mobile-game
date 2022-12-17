@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class Finish : MonoBehaviour
 {
     private bool levelCompleted = false;
-    public AudioSource BGM;
     void Start()
     {
         
@@ -21,7 +20,6 @@ public class Finish : MonoBehaviour
     }
     private void CompleteLevel()
     {
-        BGM.Stop();
         SceneManager.LoadScene("MenuHub");
     }
 }

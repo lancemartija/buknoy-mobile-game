@@ -110,7 +110,7 @@ public class QuizUI : MonoBehaviour
     public void BacktoMenuHub()
     {
         transition.SetTrigger("In");
-        quizaudio.EndMusic();
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
         Invoke("DisableButtons", 0.2f);
         Invoke("LoadMenuHub", 2f);
     }
@@ -118,15 +118,17 @@ public class QuizUI : MonoBehaviour
     void LoadMenuHub()
     {
         SceneManager.LoadScene("MenuHub");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
     }
     void LoadQuizScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoQuizMenuBGM();
     }
     //Quiz Game Buttons
     public void PauseButton()
     {
-
+       GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().PauseBGM();
        quizmanager.gamestatus = GameStatus.Menu;
        PausePanel.SetActive(true);
     }
@@ -140,6 +142,7 @@ public class QuizUI : MonoBehaviour
         {
             quizmanager.gamestatus = GameStatus.Playing;
         }
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().UnPauseBGM();
         PausePanel.SetActive(false);
         ConfirmExitPanel.SetActive(false);
     }

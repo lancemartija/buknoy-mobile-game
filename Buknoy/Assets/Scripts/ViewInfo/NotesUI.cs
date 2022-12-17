@@ -9,7 +9,6 @@ public class NotesUI : MonoBehaviour
     [SerializeField] public GameObject inventoryPanel, notesPanel;
     [SerializeField] public Text quizlblText;
     [SerializeField] private List<Button> HubButtons;
-    [SerializeField] public NotesAudio notesaudio;
 
     [SerializeField] Animator transition;
      
@@ -75,13 +74,14 @@ public class NotesUI : MonoBehaviour
     public void BacktoMenuHub()
     {
         transition.SetTrigger("In");
-        notesaudio.EndMusic();
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
         Invoke("DisableButtons", 0.2f);
         Invoke("LoadMenuHub", 2f);
     }
     //Load other Scenes after 2 seconds
     void LoadMenuHub()
     {
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
         SceneManager.LoadScene("MenuHub");
     }
 }

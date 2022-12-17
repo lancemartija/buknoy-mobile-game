@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    void Start()
+    {
+    }
     public void PlayGame()
     {
-        SceneManager.LoadScene("Prologue");
-        Time.timeScale = 1;
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
+        Invoke("LoadLevel0", 2f);
     }
     public void ContinueGame()
     {
@@ -18,5 +21,11 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+    void LoadLevel0()
+    {
+        SceneManager.LoadScene("Prologue");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(0);
+        Time.timeScale = 1;
     }
 }

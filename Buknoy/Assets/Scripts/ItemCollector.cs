@@ -30,7 +30,7 @@ public class ItemCollector : MonoBehaviour
     {
         if(Pages == 5)
         {
-            
+            GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
             SceneManager.LoadScene(nextSceneLoad);
 
             if(nextSceneLoad > PlayerPrefs.GetInt("levelAt"))

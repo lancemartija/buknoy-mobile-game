@@ -8,6 +8,8 @@ TagManager:
   - GM
   - Page
   - Fire
+  - BGM
+  - SFX
   layers:
   - Default
   - TransparentFX
