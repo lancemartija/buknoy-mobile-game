@@ -73,33 +73,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8418622798919858298, guid: 8ebacf2fe319df14f9e20fb7dbf90a5b, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8418622798919858292, guid: 8ebacf2fe319df14f9e20fb7dbf90a5b, type: 3}
     - {fileID: 8418622798919858294, guid: 8ebacf2fe319df14f9e20fb7dbf90a5b, type: 3}
+    - {fileID: 8418622798636506570, guid: 8ebacf2fe319df14f9e20fb7dbf90a5b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8ebacf2fe319df14f9e20fb7dbf90a5b, type: 3}
 --- !u!1 &7586951075987592394 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8418622798919858298, guid: 8ebacf2fe319df14f9e20fb7dbf90a5b, type: 3}
   m_PrefabInstance: {fileID: 2134344598252514480}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2124722798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7586951075987592394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ea46e7848b8bac41b205a0fe963dfb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  speed: 400
-  nextWaypointDistance: 3
-  enemyGFX: {fileID: 7586951076275204479}
 --- !u!50 &2124722797
 Rigidbody2D:
   serializedVersion: 4
@@ -121,6 +106,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2124722798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7586951075987592394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea46e7848b8bac41b205a0fe963dfb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  activateDistance: 50
+  pathUpdateSeconds: 0.5
+  speed: 400
+  nextWaypointDistance: 3
+  enemyGFX: {fileID: 7586951076275204479}
 --- !u!4 &7586951076275204479 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8418622798636506575, guid: 8ebacf2fe319df14f9e20fb7dbf90a5b, type: 3}
