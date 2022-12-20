@@ -9,6 +9,8 @@ public class QuizAudio : MonoBehaviour
 
     [SerializeField] private Text music2Text, sound2Text;
 
+    [SerializeField] private float loadingtime = 1.5f;
+
 
     public QuizManager quizmanager;
 
@@ -23,6 +25,11 @@ public class QuizAudio : MonoBehaviour
 
     public Text Music2Text {get {return music2Text;}}
     public Text Sound2Text {get {return sound2Text;}}
+
+    void Start()
+    {
+        StartCoroutine(LoadSFXSettings());
+    }
 
     //Play Sounds
     public void GameOverSound()
@@ -77,7 +84,7 @@ public class QuizAudio : MonoBehaviour
         else
         {
             soundEnabled = true;
-            Sound2Text.text = "Soundc: ON";
+            Sound2Text.text = "Sound: ON";
             correctSound.volume = 1;
             incorrectSound.volume = 1;
             buttonSound.volume = 1;
@@ -87,8 +94,9 @@ public class QuizAudio : MonoBehaviour
 
     }
 
-    public void LoadSFXSettings()
+    IEnumerator  LoadSFXSettings()
     {
+        yield return new WaitForSeconds(loadingtime);
         float sfxVolume = PlayerPrefs.GetFloat("soundVolumeSlider");
         musicVolumeToggle = PlayerPrefs.GetInt("musicVolumeToggle");
         soundVolumeToggle = PlayerPrefs.GetInt("soundVolumeToggle");

@@ -76,6 +76,8 @@ public class AudioSettings : MonoBehaviour
     {
         if (soundEnabled == true)
         {
+            slider2.value = 0;
+            slider2Value = slider2.value;
             soundEnabled = false;
             SoundText.text = "Sound: OFF";
             soundcheck.volume = slider2Value;
@@ -85,6 +87,8 @@ public class AudioSettings : MonoBehaviour
         }
         else
         {
+            slider2.value = 1;
+            slider2Value = slider2.value;
             soundEnabled = true;
             SoundText.text = "Sound: ON";
             soundcheck.volume = slider2Value;

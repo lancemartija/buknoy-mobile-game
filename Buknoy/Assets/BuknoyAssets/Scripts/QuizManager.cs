@@ -104,7 +104,6 @@ public class QuizManager : MonoBehaviour
         gamestatus = GameStatus.Playing;
         break;
     }
-    quizaudio.LoadSFXSettings();
     GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().QuizMenutoQuizGameBGM();
     unansweredQuestions = quizData[index].questions.ToList<Question>();
     SetCurrentQuestion();
