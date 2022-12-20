@@ -84,7 +84,7 @@ MonoBehaviour:
     - Christian Brothers
     - Christian Schools
     - Catholic Schools
-    correctAnswer: Christian Brothers
+    correctAnswer: Christian Schools
   - fact: La Salle helped the religious congregation known as the ___ of the Child
       Jesus in establishing a school.
     questionImage: {fileID: 0}
