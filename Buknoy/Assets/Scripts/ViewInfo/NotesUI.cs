@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class NotesUI : MonoBehaviour
 {
-    [SerializeField] public GameObject inventoryPanel, notesPanel;
+    [SerializeField] public GameObject inventoryPanel, notesPanel, zoomPanel;
     [SerializeField] public Text quizlblText;
     [SerializeField] private List<Button> HubButtons;
+
+    public NotesManager notesmanager;
 
     [SerializeField] Animator transition;
      
@@ -16,8 +18,8 @@ public class NotesUI : MonoBehaviour
     public Text QuizLabelText {get {return quizlblText;}}
     public GameObject NotesPanel {get {return notesPanel;}}
     public GameObject InventoryPanel {get {return inventoryPanel;}}
+    public GameObject ZoomPanel {get {return zoomPanel;}}
     [SerializeField] private float loadingtime = 2f;
-
     //Transition
     void Start()
     {
@@ -44,30 +46,44 @@ public class NotesUI : MonoBehaviour
     //Notes Hub Buttons
     public void NotesButton0Click()
     {
+       notesmanager.NotesArrange(0);
        QuizLabelText.text = "Quiz 1 Notes";
        inventoryPanel.SetActive(true);
        notesPanel.SetActive(false);
     }
     public void NotesButton1Click()
     {
+       notesmanager.NotesArrange(1);
        QuizLabelText.text = "Quiz 2 Notes";
        inventoryPanel.SetActive(true);
        notesPanel.SetActive(false);
     }
     public void NotesButton2Click()
     {
+       notesmanager.NotesArrange(2);
        QuizLabelText.text = "Quiz 3 Notes";
        inventoryPanel.SetActive(true);
        notesPanel.SetActive(false);
     }
     public void NotesButton3Click()
     {
+       notesmanager.NotesArrange(3);
        QuizLabelText.text = "Quiz 4 Notes";
        inventoryPanel.SetActive(true);
        notesPanel.SetActive(false);
     }
+    public void NotesZoomButtonClick(int index)
+    {
+        notesmanager.NotesZoom(index);
+        zoomPanel.SetActive(true);
+    }
+    public void ZoomBackClick()
+    {
+        zoomPanel.SetActive(false);
+    }
     public void BacktoNotesHub()
     {
+       notesmanager.NotesErase();
        inventoryPanel.SetActive(false);
        notesPanel.SetActive(true);
     }
