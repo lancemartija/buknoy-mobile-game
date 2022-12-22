@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3753021527521044503}
   - component: {fileID: 3753021527521044501}
   - component: {fileID: 3753021527521044500}
+  - component: {fileID: 5379780453155365331}
   - component: {fileID: 3753021527521044491}
   m_Layer: 0
   m_Name: Player
@@ -132,7 +133,7 @@ MonoBehaviour:
     m_Bits: 64
 --- !u!95 &3753021527521044496
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -149,7 +150,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &3753021527521044503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +192,19 @@ MonoBehaviour:
   startingHealth: 3
   iframesDuration: 1
   numberofFlashes: 3
+--- !u!114 &5379780453155365331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3753021527521044510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbaa7f2ec59225f46a10c60d0df3dd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointSound: {fileID: 0}
 --- !u!61 &3753021527521044491
 BoxCollider2D:
   m_ObjectHideFlags: 0

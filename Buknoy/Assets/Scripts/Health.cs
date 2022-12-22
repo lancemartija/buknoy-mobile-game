@@ -42,6 +42,11 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void AddHealth(float _value)
+    {
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+
     public IEnumerator Invulnerability()
     {
         Physics2D.IgnoreLayerCollision(10, 11, true);
@@ -54,11 +59,14 @@ public class Health : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
     }
-    
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    
+     
+     public void Respawn()
+     {
+        dead = false;
+        GetComponent<PlayerMovement>().enabled = true;
+        AddHealth(startingHealth);
+        anim.ResetTrigger("death");
+        anim.Play("Player_Idle");
+        StartCoroutine(Invulnerability());
+     }
 }
