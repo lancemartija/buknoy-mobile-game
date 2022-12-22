@@ -8,13 +8,6 @@ public class PlayerRespawn : MonoBehaviour
     private Transform currentCheckpoint;
     private Health playerHealth;
     private UIManager uiManager;
-    Animator anim;
-
-
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
 
     private void Awake()
     {
@@ -27,6 +20,7 @@ public class PlayerRespawn : MonoBehaviour
         if(currentCheckpoint == null)
         {
             uiManager.GameOver();
+            
             return;
         }
         transform.position = currentCheckpoint.position;
