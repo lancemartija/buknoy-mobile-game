@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ItemCollector : MonoBehaviour
+public class LevelUnLockerch3 : MonoBehaviour
 {
     private int Pages = 0;
     [SerializeField] private Text CollectibleText;
@@ -30,10 +30,7 @@ public class ItemCollector : MonoBehaviour
     {
         if(Pages == 5)
         {
-            if(nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
-            {
-                PlayerPrefs.SetInt("levelAt", nextSceneLoad);
-            }
+            PlayerPrefs.SetInt("Chapter3", 1);
 
             GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
             SceneManager.LoadScene(nextSceneLoad);

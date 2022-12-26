@@ -11,6 +11,7 @@ TagManager:
   - BGM
   - SFX
   - Checkpoint
+  - LevelButton
   layers:
   - Default
   - TransparentFX

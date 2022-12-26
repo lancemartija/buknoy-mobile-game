@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
     }
     void LoadLevel0()
     {
-        SceneManager.LoadScene("Prologue");
+        SceneManager.LoadScene("Chapter0");
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(0);
         Time.timeScale = 1;
     }
