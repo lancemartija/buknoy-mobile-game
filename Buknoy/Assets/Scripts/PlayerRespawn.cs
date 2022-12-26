@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private AudioClip checkpointSound;
+    [SerializeField] private Text LivesText;
+    [SerializeField]public int livesRemaining;
     private Transform currentCheckpoint;
     private Health playerHealth;
     private UIManager uiManager;
+
 
     private void Awake()
     {
@@ -15,14 +19,21 @@ public class PlayerRespawn : MonoBehaviour
         uiManager = FindObjectOfType<UIManager>();
     }
 
-    public void CheckRespawn()
+    public void LoseLife()
     {
-        if(currentCheckpoint == null)
+        livesRemaining--;
+        LivesText.text = livesRemaining + "x";
+
+        if(livesRemaining == 0)
         {
             uiManager.GameOver();
-            
             return;
         }
+    }
+
+    public void Respawn()
+    {
+        LoseLife();
         transform.position = currentCheckpoint.position;
         playerHealth.Respawn();
     }
