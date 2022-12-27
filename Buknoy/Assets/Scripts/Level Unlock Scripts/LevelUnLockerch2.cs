@@ -8,12 +8,11 @@ public class LevelUnLockerch2 : MonoBehaviour
 {
     private int Pages = 0;
     [SerializeField] private Text CollectibleText;
+    private UIManager uiManager;
 
-    public int nextSceneLoad;
-
-    void Start()
+    private void Awake()
     {
-        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        uiManager = FindObjectOfType<UIManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,8 +31,8 @@ public class LevelUnLockerch2 : MonoBehaviour
         {
             PlayerPrefs.SetInt("Chapter2", 1);
 
+            uiManager.Finish();
             GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
-            SceneManager.LoadScene(nextSceneLoad);
         }
     }
 
