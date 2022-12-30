@@ -15,6 +15,11 @@ public class Health : MonoBehaviour
     [SerializeField] private int numberofFlashes;
     private SpriteRenderer spriteRend;
 
+    [Header("SoundFX")]
+    [SerializeField] private AudioSource deathSoundFX;
+    [SerializeField] private AudioSource hurtSoundFX;
+
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -28,6 +33,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            hurtSoundFX.Play();
             anim.SetTrigger("hurt");
             StartCoroutine(Invulnerability());
         }
@@ -35,6 +41,7 @@ public class Health : MonoBehaviour
         {
             if (!dead)
             {
+                deathSoundFX.Play();
                 anim.SetTrigger("death");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;

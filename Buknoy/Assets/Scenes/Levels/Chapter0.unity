@@ -91921,6 +91921,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5257019208741069429, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245090606079295833, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740824579793486826, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3245811122914768846, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3753021527521044503, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
       propertyPath: CollectibleText
       value: 
@@ -91972,6 +91988,10 @@ PrefabInstance:
     - target: {fileID: 3753021527521044510, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283760638951379961, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5379780453155365331, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
       propertyPath: LivesText

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerRespawn : MonoBehaviour
 {
-    [SerializeField] private AudioClip checkpointSound;
+    [SerializeField] private AudioSource checkpointSound;
     [SerializeField] private Text LivesText;
     [SerializeField]public int livesRemaining;
     private Transform currentCheckpoint;
@@ -42,6 +42,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if(collision.transform.tag == "Checkpoint")
         {
+            checkpointSound.Play();
             currentCheckpoint = collision.transform;
             collision.GetComponent<Collider2D>().enabled = false;
             collision.GetComponent<Animator>().SetTrigger("appear");
