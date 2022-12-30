@@ -8,6 +8,7 @@ public class LevelUnLockerch2 : MonoBehaviour
 {
     private int Pages = 0;
     [SerializeField] private Text CollectibleText;
+    [SerializeField] private AudioSource collectionSoundFX;
     private UIManager uiManager;
 
     private void Awake()
@@ -19,6 +20,7 @@ public class LevelUnLockerch2 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Page"))
         {
+            collectionSoundFX.Play();
             Destroy(collision.gameObject);
             Pages++;
             CollectibleText.text = Pages + " / 5 Pages";

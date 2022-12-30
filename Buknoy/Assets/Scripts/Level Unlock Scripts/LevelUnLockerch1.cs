@@ -9,6 +9,7 @@ public class LevelUnLockerch1 : MonoBehaviour
     private int Pages = 0;
     [SerializeField] private Text CollectibleText;
     [SerializeField] private AudioSource collectionSoundFX;
+    [SerializeField] private AudioSource victorybgm;
     private UIManager uiManager;
 
     private void Awake()
@@ -34,7 +35,6 @@ public class LevelUnLockerch1 : MonoBehaviour
             PlayerPrefs.SetInt("Chapter1", 1);
             uiManager.Finish();
             GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
-             return;
         }
     }
 
