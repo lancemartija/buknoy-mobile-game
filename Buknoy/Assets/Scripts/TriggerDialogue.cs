@@ -11,32 +11,20 @@ public class TriggerDialogue : MonoBehaviour
     private GameObject controls;
     private BoxCollider2D DialogueTriggerArea;
     
-    void Start()
-    {
-        pauseBtn = GameObject.Find("PauseButton").GetComponent<Button>();
-        controls = GameObject.Find("Controls");
-        DialogueTriggerArea = GetComponent<BoxCollider2D>();
-    }
-    
-    // private void Awake() {
-    //     if (pauseBtn != null && DialogueTriggerArea != null)
-    //     {   
-    //         pauseBtn = GameObject.Find("PauseButton").AddComponent<Button>() as Button;
-    //         DialogueTriggerArea = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
-    //         return;
-    //     }
-    // }
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("Trigger Entered");
+        
+        pauseBtn = GameObject.Find("PauseButton").GetComponent<Button>();
+        controls = GameObject.Find("Controls");
+        DialogueTriggerArea = GetComponent<BoxCollider2D>();
         
         if (other.tag == "Player")
         {
             if (ConversationManager.Instance != null)
             {
-                ConversationManager.Instance.StartConversation(myConversation);
                 ConversationManager.OnConversationStarted += ConversationStart;
+                ConversationManager.Instance.StartConversation(myConversation);
                 ConversationManager.OnConversationEnded += ConversationEnd;
             }
         }
@@ -67,7 +55,6 @@ public class TriggerDialogue : MonoBehaviour
     private void ConversationEnd()
     {
         print("Buttons Enabled");
-        
         
         if (pauseBtn != null)
         {
