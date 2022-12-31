@@ -8,7 +8,6 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private AudioSource checkpointSound;
     [SerializeField] private Text LivesText;
     [SerializeField]public int livesRemaining;
-    [SerializeField] private AudioSource GameOversound;
     private Transform currentCheckpoint;
     private Health playerHealth;
     private UIManager uiManager;
@@ -28,7 +27,6 @@ public class PlayerRespawn : MonoBehaviour
         if(livesRemaining == 0)
         {
             uiManager.GameOver();
-            GameOversound.Play();
             return;
         }
     }
