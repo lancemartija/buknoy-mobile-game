@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +18,7 @@ public class LevelManager : MonoBehaviour
     public GameObject levelButton;
     public Transform Content;
     public List<Level> LevelList;
-
+    public int bgmChoice = 0;
 
     void Start()
     {
@@ -62,6 +63,15 @@ public class LevelManager : MonoBehaviour
     }
     void loadLevels(string value)
     {
+        Time.timeScale = 1;
+        int.TryParse(value, out bgmChoice);
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
+        StartCoroutine(GoToLevel(bgmChoice,value, 2f));
+    }
+    IEnumerator GoToLevel(int bgmChoice, string value, float loadingtime)
+    {
+        yield return new WaitForSeconds(loadingtime);
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(bgmChoice);
         SceneManager.LoadScene(value);
     }
 }

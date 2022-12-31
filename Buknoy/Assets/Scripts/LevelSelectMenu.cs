@@ -84,15 +84,15 @@ public class LevelSelectMenu : MonoBehaviour
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(0);
         Time.timeScale = 1;
     }
-     void LoadLevel1()
+    void LoadLevel1()
     {
         SceneManager.LoadScene("Chapter1");
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(1);
         Time.timeScale = 1;
     }
-     void LoadLevel02()
+    void LoadLevel2()
     {
-         SceneManager.LoadScene("Chapter2");
+        SceneManager.LoadScene("Chapter2");
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoGameBGM(2);
         Time.timeScale = 1;
     }
