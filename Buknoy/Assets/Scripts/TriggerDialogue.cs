@@ -9,17 +9,11 @@ public class TriggerDialogue : MonoBehaviour
     public NPCConversation myConversation;
     private Button pauseBtn;
     private GameObject controls;
-    // private Button arrowLeftBtn;
-    // private Button arrowRightBtn;
-    // private Button jumpBtn;
     private BoxCollider2D DialogueTriggerArea;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
         pauseBtn = GameObject.Find("PauseButton").GetComponent<Button>();
-        // arrowLeftBtn = GameObject.Find("ButtonLeft").GetComponent<Button>();
-        // arrowRightBtn = GameObject.Find("ButtonRight").GetComponent<Button>();
-        // jumpBtn = GameObject.Find("ButtonJump").GetComponent<Button>();
         controls = GameObject.Find("Controls");
         DialogueTriggerArea = GetComponent<BoxCollider2D>();
         
@@ -38,9 +32,6 @@ public class TriggerDialogue : MonoBehaviour
         print("Trigger Destroyed");
         print("Buttons Disabled");
         pauseBtn.interactable = false;
-        // arrowLeftBtn.interactable = false;
-        // arrowRightBtn.interactable = false;
-        // jumpBtn.interactable = false;
         controls.SetActive(false);
         Destroy(DialogueTriggerArea);
     }
@@ -50,8 +41,5 @@ public class TriggerDialogue : MonoBehaviour
         print("Buttons Enabled");
         pauseBtn.interactable = true;
         controls.SetActive(true);
-        // arrowLeftBtn.interactable = true;
-        // arrowRightBtn.interactable = true;
-        // jumpBtn.interactable = true;
     }
 }
