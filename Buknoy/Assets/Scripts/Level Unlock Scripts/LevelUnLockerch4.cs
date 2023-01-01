@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelUnLockerch4 : MonoBehaviour
 {
     private int Pages = 0;
-    [SerializeField] private Text CollectibleText;
+    [SerializeField] private TextMeshProUGUI CollectibleText;
     [SerializeField] private AudioSource collectionSoundFX;
     private UIManager uiManager;
 
