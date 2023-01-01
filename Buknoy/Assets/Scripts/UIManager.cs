@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
 
    public void Finish()
    {
+      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
       FinishScreen.SetActive(true);
       Time.timeScale = 1;
    }
@@ -34,13 +35,17 @@ public class UIManager : MonoBehaviour
 
    public void MainMenu()
    {
+      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
       SceneManager.LoadScene("MenuHub");
       Time.timeScale = 1;
+      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
    }
 
    public void TakeQuiz()
    {
+      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
       SceneManager.LoadScene("Quizzes");
+      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoQuizMenuBGM();
       Time.timeScale = 1;
    }
 }
