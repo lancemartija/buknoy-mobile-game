@@ -24,13 +24,13 @@ public class LevelUnLockerch4 : MonoBehaviour
             collectionSoundFX.Play();
             Destroy(collision.gameObject);
             Pages++;
-            CollectibleText.text = Pages + " / 5 Pages";
+            CollectibleText.text = Pages + " / 6 Pages";
         }
     }
 
     void Update()
     {
-        if(Pages == 5)
+        if(Pages == 6)
         {
            uiManager.Finish();
            
