@@ -798,7 +798,15 @@ PrefabInstance:
       objectReference: {fileID: 498423994}
     - target: {fileID: 4544344151365514961, guid: f84d7fa3ee4be3346a1f799a5e110089, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MainMenu
+      value: TakeQuiz
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544344151365514963, guid: f84d7fa3ee4be3346a1f799a5e110089, type: 3}
+      propertyPath: m_Name
+      value: TakeQuiz
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544344151365514990, guid: f84d7fa3ee4be3346a1f799a5e110089, type: 3}
+      propertyPath: m_text
+      value: '> Take A Quiz'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f84d7fa3ee4be3346a1f799a5e110089, type: 3}
