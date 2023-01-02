@@ -3258,7 +3258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.387924, y: 0.7035024, z: -9.574195}
+  m_LocalPosition: {x: -26.387924, y: -0.5234735, z: -9.574195}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3562,7 +3562,7 @@ MonoBehaviour:
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.59
+  m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.1
   m_DeadZoneHeight: 0.1
@@ -92342,12 +92342,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5257019208741069429, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5257019208741069429, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
       propertyPath: m_Volume
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 245090606079295833, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
       propertyPath: m_Volume
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740824579793486826, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
+      propertyPath: m_Pitch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1740824579793486826, guid: 3c7786f75a0bd964883ff541fbaf6b5d, type: 3}
       propertyPath: m_Volume
