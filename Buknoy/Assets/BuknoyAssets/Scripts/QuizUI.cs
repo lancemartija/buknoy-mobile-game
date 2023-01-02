@@ -36,14 +36,14 @@ public class QuizUI : MonoBehaviour
         for (int i = 0; i < HubButtons.Count; i++)
         {
             Button button = HubButtons[i];
-            button.interactable = false;
+            button.interactable = true;
         }
     }
     void DisableButtons()
     {
         for (int i = 0; i < HubButtons.Count; i++)
         {
-            Button button = HubButtons[1];
+            Button button = HubButtons[i];
             button.interactable = false;
         }
     }
