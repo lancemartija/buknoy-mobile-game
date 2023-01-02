@@ -21,8 +21,10 @@ public class BGMManager : MonoBehaviour
     void Start()
     {
       BGM.clip = mainmenuBGM;
-      PlayerPrefs.GetFloat("musicVolumeSlider", 0.5f);
-      PlayerPrefs.GetFloat("soundVolumeSlider", 0.75f);
+      PlayerPrefs.SetFloat("musicVolumeSlider", 0.5f);
+      PlayerPrefs.SetFloat("soundVolumeSlider", 0.75f);
+      PlayerPrefs.SetInt("musicVolumeToggle", 1);
+      PlayerPrefs.SetInt("soundVolumeToggle", 1);
       if (PlayerPrefs.HasKey("musicVolumeSlider"))
       {
         BGM.volume = PlayerPrefs.GetFloat("musicVolumeSlider");
