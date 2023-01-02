@@ -9,25 +9,26 @@ public class QuizResultsManager : MonoBehaviour
     [SerializeField] public QuizManager quizmanager;
     public static QuizResultsManager instance;
     public QuizResultsList quizresultslist;
-    [SerializeField] private float loadingtime = 2f;
+    [SerializeField] private float loadingtime = 1.5f;
     void Start()
     {
+        Debug.Log(Application.persistentDataPath);
         StartCoroutine(FileCreate());
     }
 
     void Awake()
     {
         instance = this;
-        if (!Directory.Exists(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults"))
+        if (!Directory.Exists(Application.persistentDataPath + "/QuizResults/"))
         {
-            Directory.CreateDirectory(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults");
+           Directory.CreateDirectory(Application.persistentDataPath + "/QuizResults/");
         }
     }
 
     IEnumerator FileCreate()
     {
         yield return new WaitForSeconds(loadingtime);
-        if (File.Exists(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults/QuizResults.xml"))
+        if (File.Exists(Application.persistentDataPath + "/QuizResults/QuizResults.xml"))
         {
             Debug.Log("High Scores already exist!");
         }
@@ -45,35 +46,36 @@ public class QuizResultsManager : MonoBehaviour
     {
         quizresultslist.resultslist = results;
         XmlSerializer serializer = new XmlSerializer(typeof(QuizResultsList));
-        FileStream stream = new FileStream(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults/QuizResults.xml", FileMode.Create);
+        FileStream stream = new FileStream(Application.persistentDataPath + "/QuizResults/QuizResults.xml", FileMode.Create);
         serializer.Serialize(stream, quizresultslist);
         Debug.Log("High Scores saved!");
         stream.Close();
     }
     public List<QuizResults> LoadScores()
     {
-        if (File.Exists(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults/QuizResults.xml"))
+        if (File.Exists(Application.persistentDataPath + "/QuizResults/QuizResults.xml"))
         {
             XmlSerializer serializer = new XmlSerializer(typeof(QuizResultsList));
-            FileStream stream = new FileStream(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults/QuizResults.xml", FileMode.Open);
+            FileStream stream = new FileStream(Application.persistentDataPath + "/QuizResults/QuizResults.xml", FileMode.Open);
             quizresultslist = serializer.Deserialize(stream) as QuizResultsList;
             Debug.Log("High Scores loaded!");
         }
         else
         {
-            Debug.Log("High Scores file not found!");
+            StartCoroutine(FileCreate());
+            Debug.Log("High Scores file not found! Creating new one...");
         }
         return quizresultslist.resultslist;
     }
     public void DeleteHighScoreData()
     {
-        foreach (var directory in Directory.GetDirectories(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults/"))
+        foreach (var directory in Directory.GetDirectories(Application.persistentDataPath + "/QuizResults/"))
         {
             DirectoryInfo data_dir = new DirectoryInfo(directory);
             data_dir.Delete(true);
         }
      
-        foreach (var file in Directory.GetFiles(Application.persistentDataPath + "/BuknoyAssets/Data/QuizResults/"))
+        foreach (var file in Directory.GetFiles(Application.persistentDataPath + "/QuizResults/"))
         {
             FileInfo file_info = new FileInfo(file);
             file_info.Delete();
