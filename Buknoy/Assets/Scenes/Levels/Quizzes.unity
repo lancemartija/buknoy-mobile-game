@@ -2451,8 +2451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -549.0001, y: 79.01399}
-  m_SizeDelta: {x: -1276.1174, y: -389.36}
+  m_AnchoredPosition: {x: -458.94434, y: 82.231}
+  m_SizeDelta: {x: -1013.9286, y: -412.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309083583
 MonoBehaviour:
@@ -5207,6 +5207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music2Text: {fileID: 273043201}
   sound2Text: {fileID: 1806515583}
+  loadingtime: 1.5
   quizmanager: {fileID: 1456424181}
   correctSound: {fileID: 1972021047}
   incorrectSound: {fileID: 1010120841}
