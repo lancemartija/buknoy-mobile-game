@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private AudioSource checkpointSound;
-    [SerializeField] private Text LivesText;
+    [SerializeField] private TextMeshProUGUI LivesText;
     [SerializeField]public int livesRemaining;
     private Transform currentCheckpoint;
     private Health playerHealth;
