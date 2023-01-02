@@ -83,9 +83,9 @@ public class QuizManager : MonoBehaviour
         }
         gamestatus = GameStatus.Playing;
         break;
-      case 3://Quiz 3, Multiple Choice and True or False
+      case 3://Quiz 3, Multiple Choice and True or False; most questions with extra time
         maxQuestions = 7; //7
-        currentTimer = timeLimit;
+        currentTimer = 90;
         for (int i = 0; i < choiceMultiple.Count; i++)
         {
             Button localBtn = choiceMultiple[i];
