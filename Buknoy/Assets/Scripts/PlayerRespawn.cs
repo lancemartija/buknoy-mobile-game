@@ -8,7 +8,7 @@ public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private AudioSource checkpointSound;
     [SerializeField] private TextMeshProUGUI LivesText;
-    [SerializeField]public int livesRemaining;
+    [SerializeField] public int livesRemaining;
     private Transform currentCheckpoint;
     private Health playerHealth;
     private UIManager uiManager;
