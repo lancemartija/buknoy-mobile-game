@@ -6,7 +6,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private SpriteRenderer sprite;
+    private GameObject sprite;
     private Animator anim;
     private float dirX = 0f;
     [SerializeField] private float moveSpeed = 7f;
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GameObject.Find("buknoy-main");
         anim = GetComponent<Animator>();
         coll = GetComponent<BoxCollider2D>();
     }
@@ -47,12 +47,12 @@ public class PlayerMovement : MonoBehaviour
         if (dirX > 0f)
         {
             state = MovementState.running;
-            sprite.flipX = false;
+            sprite.transform.localScale = new Vector2(0.4f, 0.4f);
         }
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            sprite.flipX = true;
+            sprite.transform.localScale = new Vector2(-0.4f, 0.4f);
         }
         else
         {
