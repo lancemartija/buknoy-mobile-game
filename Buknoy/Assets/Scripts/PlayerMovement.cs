@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        sprite = GameObject.Find("buknoy-main");
+        sprite = GameObject.Find("buknoy");
         anim = GetComponent<Animator>();
         coll = GetComponent<BoxCollider2D>();
     }
