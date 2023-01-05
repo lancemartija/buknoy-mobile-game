@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth {get; private set;}
     private Animator anim;
-    private bool dead = false;
+    [SerializeField] private bool dead = false;
 
     [Header("iframes")]
     [SerializeField] private float iframesDuration;
@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        Physics2D.IgnoreLayerCollision(10, 11, false);
 
     }
     public void TakeDamage(float _damage)
@@ -76,4 +77,5 @@ public class Health : MonoBehaviour
         anim.Play("Player_Idle");
         StartCoroutine(Invulnerability());
      }
+     
 }
