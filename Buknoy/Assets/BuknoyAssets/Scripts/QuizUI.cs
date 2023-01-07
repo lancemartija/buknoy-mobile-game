@@ -6,29 +6,54 @@ using UnityEngine.SceneManagement;
 
 public class QuizUI : MonoBehaviour
 {
-    [SerializeField] public QuizManager quizmanager;
-    [SerializeField] public QuizResultsManager quizresults;
-    [SerializeField] public QuizAudio quizaudio;
-    [SerializeField] private float loadingtime = 0f;
+    [SerializeField]
+    public QuizManager quizmanager;
 
-    [SerializeField] Animator transition;
+    [SerializeField]
+    public QuizResultsManager quizresults;
 
-    [SerializeField] private List<Button> HubButtons, ExitButtons;
-    
+    [SerializeField]
+    public QuizAudio quizaudio;
 
-    [SerializeField] public GameObject confirmexitPanel, confirmdeletePanel, pausePanel, settingsPanel;
+    [SerializeField]
+    private float loadingtime = 0f;
 
-    public GameObject PausePanel {get {return pausePanel;}}
-    public GameObject ConfirmExitPanel {get {return confirmexitPanel;}}
-    public GameObject ConfirmDeletePanel {get {return confirmdeletePanel;}}
-    public GameObject SettingsPanel {get {return settingsPanel;}}
+    [SerializeField]
+    Animator transition;
+
+    [SerializeField]
+    private List<Button> HubButtons,
+        ExitButtons;
+
+    [SerializeField]
+    public GameObject confirmexitPanel,
+        confirmdeletePanel,
+        pausePanel,
+        settingsPanel;
+
+    public GameObject PausePanel
+    {
+        get { return pausePanel; }
+    }
+    public GameObject ConfirmExitPanel
+    {
+        get { return confirmexitPanel; }
+    }
+    public GameObject ConfirmDeletePanel
+    {
+        get { return confirmdeletePanel; }
+    }
+    public GameObject SettingsPanel
+    {
+        get { return settingsPanel; }
+    }
 
     //Transition
     void Start()
     {
         StartCoroutine(InitializeScene());
     }
-    
+
     IEnumerator InitializeScene()
     {
         yield return new WaitForSeconds(loadingtime);
@@ -39,6 +64,7 @@ public class QuizUI : MonoBehaviour
             button.interactable = true;
         }
     }
+
     // void DisableButtons()
     // {
     //     for (int i = 0; i < HubButtons.Count; i++)
@@ -55,7 +81,7 @@ public class QuizUI : MonoBehaviour
     //         button.interactable = false;
     //     }
     // }
-    
+
     //Quiz Hub Buttons
     public void Button0Click()
     {
@@ -63,7 +89,7 @@ public class QuizUI : MonoBehaviour
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
     }
-    
+
     public void Button1Click()
     {
         quizmanager.StartGame(1);
@@ -95,19 +121,23 @@ public class QuizUI : MonoBehaviour
         quizmanager.mainmenuPanel.SetActive(false);
         quizmanager.quizPanel.SetActive(true);
     }
+
     public void ButtonResultsClick() //View Results
     {
         quizmanager.quizResultsPanel.SetActive(true);
         quizmanager.ViewResults();
     }
+
     public void ButtonSettingsClick() //View Settings
     {
-       SettingsPanel.SetActive(true);
+        SettingsPanel.SetActive(true);
     }
+
     public void BacktoQuizHub()
     {
         quizmanager.quizResultsPanel.SetActive(false);
     }
+
     public void BacktoMenuHub()
     {
         transition.SetTrigger("In");
@@ -115,28 +145,32 @@ public class QuizUI : MonoBehaviour
         // Invoke("DisableButtons", 0.2f);
         Invoke("LoadMenuHub", 0f);
     }
-    
+
     void LoadMenuHub()
     {
         SceneManager.LoadScene("MenuHub");
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
     }
+
     void LoadQuizScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoQuizMenuBGM();
     }
+
     //Quiz Game Buttons
     public void PauseButton()
     {
-       GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().PauseBGM();
-       quizmanager.gamestatus = GameStatus.Menu;
-       PausePanel.SetActive(true);
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().PauseBGM();
+        quizmanager.gamestatus = GameStatus.Menu;
+        PausePanel.SetActive(true);
     }
+
     public void ConfirmExitButton()
     {
         ConfirmExitPanel.SetActive(true);
     }
+
     public void ResumeButton()
     {
         if (quizmanager.quizChoice > 0)
@@ -148,21 +182,24 @@ public class QuizUI : MonoBehaviour
         ConfirmExitPanel.SetActive(false);
     }
 
-    public void RetryButton ()
+    public void RetryButton()
     {
         transition.SetTrigger("In");
         // Invoke("DisableButtons2", 0.2f);
         Invoke("LoadQuizScene", 0f);
     }
+
     //Quiz Results Buttons
     public void ConfirmDeleteButton()
     {
         ConfirmDeletePanel.SetActive(true);
     }
+
     public void Resume2Button()
     {
         ConfirmDeletePanel.SetActive(false);
     }
+
     public void DeleteHighScoreDataButton()
     {
         ConfirmDeletePanel.SetActive(false);
