@@ -3842,11 +3842,6 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
---- !u!4 &360771213 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 515a04408632df549bb308be5dcfa5f3, type: 3}
-  m_PrefabInstance: {fileID: 360771209}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &360771214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5201,7 +5196,7 @@ PrefabInstance:
     - target: {fileID: 2174082925774487339, guid: 3aa4d3bb8af062d45987f14edea3ff77, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 360771213}
+      objectReference: {fileID: 163081392}
     - target: {fileID: 2174082925774487339, guid: 3aa4d3bb8af062d45987f14edea3ff77, type: 3}
       propertyPath: chaseDistance
       value: 500
