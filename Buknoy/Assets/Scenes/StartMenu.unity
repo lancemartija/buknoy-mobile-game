@@ -869,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 0}
   mainmenuBGM: {fileID: 8300000, guid: 13133587bf135cb4e82b6eefa10060a0, type: 3}
+  menuhubBGM: {fileID: 8300000, guid: 41ccd0175dd55b44eb8d1de6666b4a11, type: 3}
   quizmenuBGM: {fileID: 8300000, guid: bd82fb6796ecc234291df5f257660a8b, type: 3}
   quizgameBGM: {fileID: 8300000, guid: 84fb05f50e6545741a8368b4205aa902, type: 3}
   notesBGM: {fileID: 8300000, guid: 35ec969b8608f0e478f14fce80162a7c, type: 3}

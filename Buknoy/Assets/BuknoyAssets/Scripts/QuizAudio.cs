@@ -9,7 +9,7 @@ public class QuizAudio : MonoBehaviour
 
     [SerializeField] private Text music2Text, sound2Text;
 
-    [SerializeField] private float loadingtime = 1.5f;
+    [SerializeField] private float loadingtime = 0f;
 
 
     public QuizManager quizmanager;

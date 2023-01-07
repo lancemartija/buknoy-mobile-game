@@ -6,9 +6,9 @@ public class BGMManager : MonoBehaviour
 {
 
     public AudioSource BGM;
-    private float fadeTime = 1f;
+    private float fadeTime = 0f;
 
-    public AudioClip mainmenuBGM, quizmenuBGM, quizgameBGM, notesBGM, chapter0BGM, chapter1BGM, chapter2BGM, chapter3BGM;
+    public AudioClip mainmenuBGM, menuhubBGM, quizmenuBGM, quizgameBGM, notesBGM, chapter0BGM, chapter1BGM, chapter2BGM, chapter3BGM;
 
 
     
@@ -70,7 +70,14 @@ public class BGMManager : MonoBehaviour
     {
         BGM.clip = notesBGM;
         PlayMusic();
-    } 
+    }
+    
+    public void BacktoMenuHubBGM()
+    {
+      BGM.clip = menuhubBGM;
+      PlayMusic();
+    }
+    
     public void BacktoMainMenuBGM()
     {
         BGM.clip = mainmenuBGM;

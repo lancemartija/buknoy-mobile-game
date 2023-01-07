@@ -9,7 +9,7 @@ public class QuizUI : MonoBehaviour
     [SerializeField] public QuizManager quizmanager;
     [SerializeField] public QuizResultsManager quizresults;
     [SerializeField] public QuizAudio quizaudio;
-    [SerializeField] private float loadingtime = 2f;
+    [SerializeField] private float loadingtime = 0f;
 
     [SerializeField] Animator transition;
 
@@ -39,22 +39,22 @@ public class QuizUI : MonoBehaviour
             button.interactable = true;
         }
     }
-    void DisableButtons()
-    {
-        for (int i = 0; i < HubButtons.Count; i++)
-        {
-            Button button = HubButtons[i];
-            button.interactable = false;
-        }
-    }
-    void DisableButtons2()
-    {
-        for (int i = 0; i < ExitButtons.Count; i++)
-        {
-            Button button = ExitButtons[i];
-            button.interactable = false;
-        }
-    }
+    // void DisableButtons()
+    // {
+    //     for (int i = 0; i < HubButtons.Count; i++)
+    //     {
+    //         Button button = HubButtons[i];
+    //         button.interactable = false;
+    //     }
+    // }
+    // void DisableButtons2()
+    // {
+    //     for (int i = 0; i < ExitButtons.Count; i++)
+    //     {
+    //         Button button = ExitButtons[i];
+    //         button.interactable = false;
+    //     }
+    // }
     
     //Quiz Hub Buttons
     public void Button0Click()
@@ -112,10 +112,10 @@ public class QuizUI : MonoBehaviour
     {
         transition.SetTrigger("In");
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("DisableButtons", 0.2f);
-        Invoke("LoadMenuHub", 2f);
+        // Invoke("DisableButtons", 0.2f);
+        Invoke("LoadMenuHub", 0f);
     }
-    //Load other Scenes after 2 seconds
+    
     void LoadMenuHub()
     {
         SceneManager.LoadScene("MenuHub");
@@ -151,8 +151,8 @@ public class QuizUI : MonoBehaviour
     public void RetryButton ()
     {
         transition.SetTrigger("In");
-        Invoke("DisableButtons2", 0.2f);
-        Invoke("LoadQuizScene", 2f);
+        // Invoke("DisableButtons2", 0.2f);
+        Invoke("LoadQuizScene", 0f);
     }
     //Quiz Results Buttons
     public void ConfirmDeleteButton()
