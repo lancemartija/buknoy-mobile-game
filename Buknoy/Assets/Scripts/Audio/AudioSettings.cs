@@ -158,18 +158,17 @@ public class AudioSettings : MonoBehaviour
             musicEnabled = false;
             GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BGM.volume = musicVolume;
         }
-
     }
 
     public void GoToMenuHub()
     {
         SaveAudioSettings();
-        Invoke("LoadMenuHub", 2f);
+        Invoke("LoadMenuHub", 0f);
     }
     //Load other Scenes after 2 seconds
     void LoadMenuHub()
     {
-        SceneManager.LoadScene("MenuHub");
         LoadAudioSettings();
+        SceneManager.LoadScene("MenuHub");
     }
 }
