@@ -2874,7 +2874,7 @@ MonoBehaviour:
   quizmanager: {fileID: 1456424181}
   quizresults: {fileID: 271373975}
   quizaudio: {fileID: 827386716}
-  loadingtime: 1
+  loadingtime: 0
   transition: {fileID: 226153727}
   HubButtons:
   - {fileID: 513632858}
@@ -5207,7 +5207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music2Text: {fileID: 273043201}
   sound2Text: {fileID: 1806515583}
-  loadingtime: 1.5
+  loadingtime: 0
   quizmanager: {fileID: 1456424181}
   correctSound: {fileID: 1972021047}
   incorrectSound: {fileID: 1010120841}

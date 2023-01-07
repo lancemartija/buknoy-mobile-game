@@ -66,7 +66,7 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         int.TryParse(value, out bgmChoice);
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        StartCoroutine(GoToLevel(bgmChoice,value, 2f));
+        StartCoroutine(GoToLevel(bgmChoice,value, 0f));
     }
     IEnumerator GoToLevel(int bgmChoice, string value, float loadingtime)
     {

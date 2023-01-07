@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuHub : MonoBehaviour
 {
+    void Awake() {
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
+    }
     
     public void GoToMenu()
     {
@@ -13,7 +16,7 @@ public class MenuHub : MonoBehaviour
     public void GoToQuiz()
     {
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("LoadQuiz", 2f);
+        Invoke("LoadQuiz", 0f);
     }
     public void GoToLevelSelect()
     {
@@ -22,11 +25,11 @@ public class MenuHub : MonoBehaviour
     public void GoToViewInfo()
     {
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("LoadNotes", 2f);
+        Invoke("LoadNotes", 0f);
     }
     public void GotoSettings()
     {
-        Invoke("LoadSettings", 2f);
+        Invoke("LoadSettings", 0f);
     }
     void LoadQuiz()
     {

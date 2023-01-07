@@ -1193,7 +1193,7 @@ MonoBehaviour:
   - {fileID: 1796017199}
   notesmanager: {fileID: 1726595683}
   transition: {fileID: 376958156}
-  loadingtime: 1
+  loadingtime: 0
 --- !u!1 &686022529
 GameObject:
   m_ObjectHideFlags: 0

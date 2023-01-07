@@ -61,22 +61,22 @@ public class LevelSelectMenu : MonoBehaviour
     public void GoToPrologue()
     {
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("LoadLevel0", 2f);
+        Invoke("LoadLevel0", 0f);
     }
     public void GoToLevel1()
     {
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("LoadLevel1", 2f);
+        Invoke("LoadLevel1", 0f);
     }
     public void GoToLevel2()
     {
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("LoadLevel2", 2f);
+        Invoke("LoadLevel2", 0f);
     }
     public void GoToLevel3()
     {
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("LoadLevel3", 2f);
+        Invoke("LoadLevel3", 0f);
     }
     void LoadLevel0()
     {
