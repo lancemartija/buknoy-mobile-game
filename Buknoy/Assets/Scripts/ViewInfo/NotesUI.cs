@@ -35,14 +35,14 @@ public class NotesUI : MonoBehaviour
             button.interactable = true;
         }
     }
-    void DisableButtons()
-    {
-        for (int i = 0; i < HubButtons.Count; i++)
-        {
-            Button button = HubButtons[i];
-            button.interactable = false;
-        }
-    }
+    // void DisableButtons()
+    // {
+    //     for (int i = 0; i < HubButtons.Count; i++)
+    //     {
+    //         Button button = HubButtons[i];
+    //         button.interactable = false;
+    //     }
+    // }
     //Notes Hub Buttons
     public void NotesButton0Click()
     {
@@ -91,8 +91,8 @@ public class NotesUI : MonoBehaviour
     {
         transition.SetTrigger("In");
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("DisableButtons", 0.2f);
-        Invoke("LoadMenuHub", 2f);
+        // Invoke("DisableButtons", 0.2f);
+        Invoke("LoadMenuHub", 0f);
     }
     //Load other Scenes after 2 seconds
     void LoadMenuHub()
