@@ -9,14 +9,27 @@ public class PlayerMovement : MonoBehaviour
     private GameObject sprite;
     private Animator anim;
     private float dirX = 0f;
-    [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 14f;
+
+    [SerializeField]
+    private float moveSpeed = 7f;
+
+    [SerializeField]
+    private float jumpForce = 14f;
     private BoxCollider2D coll;
 
-    private enum MovementState { idle, running, jumping, falling }
-    [SerializeField] private AudioSource jumpSoundEffect;
-    [SerializeField] private LayerMask jumpableGround;
-    
+    private enum MovementState
+    {
+        idle,
+        running,
+        jumping,
+        falling
+    }
+
+    [SerializeField]
+    private AudioSource jumpSoundEffect;
+
+    [SerializeField]
+    private LayerMask jumpableGround;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
         UpdateAnimationState();
     }
+
     private void UpdateAnimationState()
     {
         MovementState state;
@@ -73,6 +87,13 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+        return Physics2D.BoxCast(
+            coll.bounds.center,
+            coll.bounds.size,
+            0f,
+            Vector2.down,
+            .1f,
+            jumpableGround
+        );
     }
 }
