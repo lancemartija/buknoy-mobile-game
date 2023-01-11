@@ -25,7 +25,6 @@ public class PauseMenuControls : MonoBehaviour
     {
         ResumeGame();
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
-        // Time.timeScale = 1;
         SceneManager.LoadScene("MenuHub");
     }
 }

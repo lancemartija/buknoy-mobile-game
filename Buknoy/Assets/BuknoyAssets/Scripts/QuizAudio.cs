@@ -6,25 +6,34 @@ using UnityEngine.UI;
 
 public class QuizAudio : MonoBehaviour
 {
+    [SerializeField]
+    private Text music2Text,
+        sound2Text;
 
-    [SerializeField] private Text music2Text, sound2Text;
-
-    [SerializeField] private float loadingtime = 0f;
-
+    [SerializeField]
+    private float loadingtime = 0f;
 
     public QuizManager quizmanager;
 
-    public AudioSource correctSound, incorrectSound, buttonSound, gameover;
+    public AudioSource correctSound,
+        incorrectSound,
+        buttonSound,
+        gameover;
 
+    public int musicVolumeToggle,
+        soundVolumeToggle;
 
-    public int musicVolumeToggle, soundVolumeToggle;
+    public bool musicEnabled = true,
+        soundEnabled = true;
 
-    public bool musicEnabled = true, soundEnabled = true;
-
-
-
-    public Text Music2Text {get {return music2Text;}}
-    public Text Sound2Text {get {return sound2Text;}}
+    public Text Music2Text
+    {
+        get { return music2Text; }
+    }
+    public Text Sound2Text
+    {
+        get { return sound2Text; }
+    }
 
     void Start()
     {
@@ -56,17 +65,16 @@ public class QuizAudio : MonoBehaviour
         {
             musicEnabled = false;
             Music2Text.text = "Music: OFF";
-             GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BGM.volume = 0;
+            GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BGM.volume = 0;
             musicVolumeToggle = 0;
         }
         else
         {
             musicEnabled = true;
             Music2Text.text = "Music: ON";
-             GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BGM.volume = 1;
+            GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BGM.volume = 1;
             musicVolumeToggle = 1;
         }
-
     }
 
     public void ToggleSound()
@@ -91,10 +99,9 @@ public class QuizAudio : MonoBehaviour
             gameover.volume = 1;
             soundVolumeToggle = 1;
         }
-
     }
 
-    IEnumerator  LoadSFXSettings()
+    IEnumerator LoadSFXSettings()
     {
         yield return new WaitForSeconds(loadingtime);
         float sfxVolume = PlayerPrefs.GetFloat("soundVolumeSlider");
@@ -105,5 +112,4 @@ public class QuizAudio : MonoBehaviour
         buttonSound.volume = sfxVolume;
         gameover.volume = sfxVolume;
     }
-
 }
