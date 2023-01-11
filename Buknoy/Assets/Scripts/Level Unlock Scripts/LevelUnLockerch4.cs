@@ -8,8 +8,12 @@ using TMPro;
 public class LevelUnLockerch4 : MonoBehaviour
 {
     private int Pages = 0;
-    [SerializeField] private TextMeshProUGUI CollectibleText;
-    [SerializeField] private AudioSource collectionSoundFX;
+
+    [SerializeField]
+    private TextMeshProUGUI CollectibleText;
+
+    [SerializeField]
+    private AudioSource collectionSoundFX;
     private UIManager uiManager;
 
     private void Awake()
@@ -30,13 +34,9 @@ public class LevelUnLockerch4 : MonoBehaviour
 
     void Update()
     {
-        if(Pages == 5)
+        if (Pages == 5)
         {
-           uiManager.Finish();
-           
-            GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
+            uiManager.Finish();
         }
     }
-
-    
 }
