@@ -5,7 +5,6 @@ using UnityEngine;
 public class BGMManager : MonoBehaviour
 {
     public AudioSource BGM;
-    private float fadeTime = 0f;
     public AudioClip mainmenuBGM,
         menuhubBGM,
         quizmenuBGM,
@@ -54,12 +53,12 @@ public class BGMManager : MonoBehaviour
     //Default Triggers
     public void PlayMusic()
     {
-        StartCoroutine(FadeIn(BGM, fadeTime));
+        BGM.Play();
     }
 
     public void StopMusic()
     {
-        StartCoroutine(FadeOut(BGM, fadeTime));
+        BGM.Stop();
     }
 
     public void StopMusicNow()
@@ -87,7 +86,10 @@ public class BGMManager : MonoBehaviour
     public void BacktoMenuHubBGM()
     {
         BGM.clip = menuhubBGM;
-        PlayMusic();
+        if (!BGM.isPlaying)
+        {
+            PlayMusic();
+        }
     }
 
     public void BacktoMainMenuBGM()
@@ -134,29 +136,6 @@ public class BGMManager : MonoBehaviour
         if (!BGM.isPlaying)
         {
             BGM.Play();
-        }
-    }
-
-    //Fade In and Fade Out BGM
-    public static IEnumerator FadeOut(AudioSource BGM, float FadeTime)
-    {
-        float startVolume = BGM.volume;
-        while (BGM.volume > 0)
-        {
-            BGM.volume -= startVolume * Time.deltaTime / FadeTime;
-            yield return null;
-        }
-        BGM.Stop();
-    }
-
-    public static IEnumerator FadeIn(AudioSource BGM, float FadeTime)
-    {
-        BGM.Play();
-        BGM.volume = 0f;
-        while (BGM.volume < PlayerPrefs.GetFloat("musicVolumeSlider"))
-        {
-            BGM.volume += Time.deltaTime / FadeTime;
-            yield return null;
         }
     }
 }

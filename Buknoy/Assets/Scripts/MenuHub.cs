@@ -5,15 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuHub : MonoBehaviour
 {
-    void Awake()
-    {
-        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
-    }
+    // void Awake()
+    // {
+    //     GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
+    // }
 
     public void GoToMenu()
     {
-        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
+        // GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
         SceneManager.LoadScene("StartMenu");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
     }
 
     public void GoToQuiz()

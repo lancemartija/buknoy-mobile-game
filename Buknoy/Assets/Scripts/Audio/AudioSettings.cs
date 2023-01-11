@@ -193,7 +193,8 @@ public class AudioSettings : MonoBehaviour
     //Load other Scenes after 2 seconds
     void LoadMenuHub()
     {
-        LoadAudioSettings();
+        // LoadAudioSettings();
         SceneManager.LoadScene("MenuHub");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
     }
 }

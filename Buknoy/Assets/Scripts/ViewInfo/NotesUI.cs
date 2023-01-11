@@ -129,7 +129,7 @@ public class NotesUI : MonoBehaviour
     //Load other Scenes after 2 seconds
     void LoadMenuHub()
     {
-        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
         SceneManager.LoadScene("MenuHub");
     }
 }

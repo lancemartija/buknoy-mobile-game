@@ -5,23 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    void Start()
-    {
-    }
     public void PlayGame()
     {
         GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusic();
-        Invoke("LoadLevel0", 2f);
+        Invoke("LoadLevel0", 0f);
     }
+
     public void ContinueGame()
     {
         SceneManager.LoadScene("MenuHub");
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
     }
+
     public void QuitGame()
     {
         Debug.Log("QUIT!");
         Application.Quit();
     }
+
     void LoadLevel0()
     {
         SceneManager.LoadSceneAsync("Chapter0");
