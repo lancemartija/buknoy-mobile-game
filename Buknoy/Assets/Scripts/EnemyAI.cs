@@ -23,9 +23,14 @@ public class EnemyAI : MonoBehaviour
     private int currentWaypoint = 0;
     Seeker seeker;
     Rigidbody2D rb;
+    private Animator anim;
 
     Vector3 startPosition;
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     public void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -38,8 +43,16 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        EnemyReset();
+    }
+    private void EnemyReset()
+    {
         if ((transform.position - startPosition).magnitude > chaseDistance)
+        {
+            anim.SetTrigger("enmyreset");
             transform.position = startPosition;
+        }
+        
     }
 
     private void FixedUpdate()
