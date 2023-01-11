@@ -149,7 +149,7 @@ public class QuizUI : MonoBehaviour
     void LoadMenuHub()
     {
         SceneManager.LoadScene("MenuHub");
-        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
     }
 
     void LoadQuizScene()
