@@ -17,16 +17,16 @@ public class AIPatrol : MonoBehaviour
    
     void Update()
     {
-        if (IsFacingRight())
-        {
-            enmyRigidbody.velocity = new Vector2(moveSpeed, 0f);
-        }
-        else
+        if (IsFacingLeft())
         {
             enmyRigidbody.velocity = new Vector2(-moveSpeed, 0f);
         }
+        else
+        {
+            enmyRigidbody.velocity = new Vector2(moveSpeed, 0f);
+        }
     }
-    private bool IsFacingRight()
+    private bool IsFacingLeft()
     {
         return transform.localScale.x > Mathf.Epsilon;
     }
@@ -39,7 +39,7 @@ public class AIPatrol : MonoBehaviour
         }
         else
         {
-            transform.localScale = new Vector2(-(Mathf.Sign(enmyRigidbody.velocity.x)), transform.localScale.y);
+            transform.localScale = new Vector2((Mathf.Sign(enmyRigidbody.velocity.x)), transform.localScale.y);
         }
     }
      private void OnTriggerEnter2D(Collider2D collision)
