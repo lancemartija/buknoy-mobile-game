@@ -49,7 +49,6 @@ public class EnemyAI : MonoBehaviour
     {
         if ((transform.position - startPosition).magnitude > chaseDistance)
         {
-            anim.SetTrigger("enmyreset");
             transform.position = startPosition;
         }
         
