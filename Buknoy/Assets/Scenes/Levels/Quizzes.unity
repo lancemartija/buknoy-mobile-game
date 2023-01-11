@@ -2874,7 +2874,7 @@ MonoBehaviour:
   quizmanager: {fileID: 1456424181}
   quizresults: {fileID: 271373975}
   quizaudio: {fileID: 827386716}
-  loadingtime: 0
+  loadingtime: 1
   transition: {fileID: 226153727}
   HubButtons:
   - {fileID: 513632858}
@@ -10319,7 +10319,7 @@ GameObject:
   - component: {fileID: 1691795133}
   - component: {fileID: 1691795132}
   m_Layer: 5
-  m_Name: MenuHubButton
+  m_Name: GoBackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
