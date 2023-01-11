@@ -6,10 +6,14 @@ using System.IO;
 
 public class QuizResultsManager : MonoBehaviour
 {
-    [SerializeField] public QuizManager quizmanager;
+    [SerializeField]
+    public QuizManager quizmanager;
     public static QuizResultsManager instance;
     public QuizResultsList quizresultslist;
-    [SerializeField] private float loadingtime = 1.5f;
+
+    [SerializeField]
+    private float loadingtime = 0f;
+
     void Start()
     {
         Debug.Log(Application.persistentDataPath);
@@ -21,7 +25,7 @@ public class QuizResultsManager : MonoBehaviour
         instance = this;
         if (!Directory.Exists(Application.persistentDataPath + "/QuizResults/"))
         {
-           Directory.CreateDirectory(Application.persistentDataPath + "/QuizResults/");
+            Directory.CreateDirectory(Application.persistentDataPath + "/QuizResults/");
         }
     }
 
@@ -42,21 +46,29 @@ public class QuizResultsManager : MonoBehaviour
             Debug.Log("High Score file created!");
         }
     }
+
     public void SaveScores(List<QuizResults> results)
     {
         quizresultslist.resultslist = results;
         XmlSerializer serializer = new XmlSerializer(typeof(QuizResultsList));
-        FileStream stream = new FileStream(Application.persistentDataPath + "/QuizResults/QuizResults.xml", FileMode.Create);
+        FileStream stream = new FileStream(
+            Application.persistentDataPath + "/QuizResults/QuizResults.xml",
+            FileMode.Create
+        );
         serializer.Serialize(stream, quizresultslist);
         Debug.Log("High Scores saved!");
         stream.Close();
     }
+
     public List<QuizResults> LoadScores()
     {
         if (File.Exists(Application.persistentDataPath + "/QuizResults/QuizResults.xml"))
         {
             XmlSerializer serializer = new XmlSerializer(typeof(QuizResultsList));
-            FileStream stream = new FileStream(Application.persistentDataPath + "/QuizResults/QuizResults.xml", FileMode.Open);
+            FileStream stream = new FileStream(
+                Application.persistentDataPath + "/QuizResults/QuizResults.xml",
+                FileMode.Open
+            );
             quizresultslist = serializer.Deserialize(stream) as QuizResultsList;
             Debug.Log("High Scores loaded!");
         }
@@ -67,27 +79,29 @@ public class QuizResultsManager : MonoBehaviour
         }
         return quizresultslist.resultslist;
     }
+
     public void DeleteHighScoreData()
     {
-        foreach (var directory in Directory.GetDirectories(Application.persistentDataPath + "/QuizResults/"))
+        foreach (
+            var directory in Directory.GetDirectories(
+                Application.persistentDataPath + "/QuizResults/"
+            )
+        )
         {
             DirectoryInfo data_dir = new DirectoryInfo(directory);
             data_dir.Delete(true);
         }
-     
+
         foreach (var file in Directory.GetFiles(Application.persistentDataPath + "/QuizResults/"))
         {
             FileInfo file_info = new FileInfo(file);
             file_info.Delete();
         }
     }
-   
 }
 
 [System.Serializable]
 public class QuizResultsList
 {
-   public List <QuizResults> resultslist = new List<QuizResults>();
+    public List<QuizResults> resultslist = new List<QuizResults>();
 }
-
-
