@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5815895293002041380}
   - component: {fileID: 5815895293002041381}
   - component: {fileID: 5815895293002041378}
-  - component: {fileID: 5815895293002041385}
+  - component: {fileID: -10014373403938290}
+  - component: {fileID: 1667342748718996866}
   m_Layer: 11
   m_Name: Duck
   m_TagString: Trap
@@ -98,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 5815895293002041376}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3f2e39b9bda2f94db98490b473c017c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4e80f726847195f41b28705e7c37e8e6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -121,7 +122,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6654129, y: -0.17892063}
+  m_Offset: {x: -0.0796814, y: -0.17892063}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.54286194, y: 2.3174002}
+  m_Size: {x: 2.0551147, y: 2.3174002}
   m_EdgeRadius: 0
 --- !u!50 &5815895293002041378
 Rigidbody2D:
@@ -155,7 +156,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5815895293002041385
+--- !u!114 &-10014373403938290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,8 +165,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5815895293002041376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb1f676ddd769db4ea75e3eb57502603, type: 3}
+  m_Script: {fileID: 11500000, guid: f25d18fb98833ca47810446927939b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  damage: 1
+  upspeed: 0
+  downspeed: 0
+  up: {fileID: 0}
+  down: {fileID: 0}
+--- !u!114 &1667342748718996866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815895293002041376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09b1755344cf0441b7245fd158220ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1.5
