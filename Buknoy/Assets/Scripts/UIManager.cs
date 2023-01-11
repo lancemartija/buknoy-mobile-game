@@ -5,45 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-   [SerializeField] private GameObject gameOverScreen;
-   [SerializeField] private GameObject FinishScreen;
+    [SerializeField]
+    private GameObject gameOverScreen;
 
-   public void Awake()
-   {
-      gameOverScreen.SetActive(false);
-      FinishScreen.SetActive(false);
-   }
+    [SerializeField]
+    private GameObject FinishScreen;
 
-   public void GameOver()
-   {
-      gameOverScreen.SetActive(true);
-      Time.timeScale = 0;
-   }
+    public void Awake()
+    {
+        gameOverScreen.SetActive(false);
+        FinishScreen.SetActive(false);
+    }
 
-   public void Finish()
-   {
-      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().StopMusicNow();
-      FinishScreen.SetActive(true);
-      Time.timeScale = 1;
-   }
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
 
-   public void Restart()
-   {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-      Time.timeScale = 1;
-      
-   }
-   public void MainMenu()
-   {
-      SceneManager.LoadScene("MenuHub");
-      Time.timeScale = 1;
-      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMainMenuBGM();
-   }
+    public void Finish()
+    {
+        FinishScreen.SetActive(true);
+    }
 
-   public void TakeQuiz()
-   {
-      SceneManager.LoadScene("Quizzes");
-      GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoQuizMenuBGM();
-      Time.timeScale = 1;
-   }
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenu()
+    {
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().BacktoMenuHubBGM();
+        SceneManager.LoadScene("MenuHub");
+    }
+
+    public void TakeQuiz()
+    {
+        GameObject.FindGameObjectWithTag("BGM").GetComponent<BGMManager>().MainMenutoQuizMenuBGM();
+        SceneManager.LoadScene("Quizzes");
+    }
 }
