@@ -71,6 +71,7 @@ public class QuizResultsManager : MonoBehaviour
             );
             quizresultslist = serializer.Deserialize(stream) as QuizResultsList;
             Debug.Log("High Scores loaded!");
+            stream.Close();
         }
         else
         {
