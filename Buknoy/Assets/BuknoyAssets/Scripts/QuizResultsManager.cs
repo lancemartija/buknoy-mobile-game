@@ -12,7 +12,7 @@ public class QuizResultsManager : MonoBehaviour
     public QuizResultsList quizresultslist;
 
     [SerializeField]
-    private float loadingtime = 2f;
+    private float loadingtime = 0f;
 
     void Start()
     {
