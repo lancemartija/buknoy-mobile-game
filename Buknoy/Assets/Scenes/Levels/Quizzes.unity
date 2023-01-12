@@ -2874,7 +2874,7 @@ MonoBehaviour:
   quizmanager: {fileID: 1456424181}
   quizresults: {fileID: 271373975}
   quizaudio: {fileID: 827386716}
-  loadingtime: 1
+  loadingtime: 0
   transition: {fileID: 226153727}
   HubButtons:
   - {fileID: 513632858}
