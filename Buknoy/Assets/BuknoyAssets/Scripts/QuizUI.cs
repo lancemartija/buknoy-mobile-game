@@ -125,8 +125,8 @@ public class QuizUI : MonoBehaviour
     public void ButtonResultsClick() //View Results
     {
         quizmanager.quizResultsPanel.SetActive(true);
-        GameObject.Find("GoBackButton").GetComponent<Button>().interactable = true;
-        GameObject.Find("DeleteDataButton").GetComponent<Button>().interactable = true;
+        // GameObject.Find("GoBackButton").GetComponent<Button>().interactable = true;
+        // GameObject.Find("DeleteDataButton").GetComponent<Button>().interactable = true;
         quizmanager.ViewResults();
     }
 
@@ -137,9 +137,10 @@ public class QuizUI : MonoBehaviour
 
     public void BacktoQuizHub()
     {
-        Invoke("QuizMenu", 1f);
-        GameObject.Find("GoBackButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("DeleteDataButton").GetComponent<Button>().interactable = false;
+        quizmanager.quizResultsPanel.SetActive(false);
+        // Invoke("QuizMenu", 0f);
+        // GameObject.Find("GoBackButton").GetComponent<Button>().interactable = false;
+        // GameObject.Find("DeleteDataButton").GetComponent<Button>().interactable = false;
     }
 
     public void BacktoMenuHub()
@@ -150,10 +151,10 @@ public class QuizUI : MonoBehaviour
         Invoke("LoadMenuHub", 0f);
     }
 
-    void QuizMenu()
-    {
-        quizmanager.quizResultsPanel.SetActive(false);
-    }
+    // void QuizMenu()
+    // {
+    //     quizmanager.quizResultsPanel.SetActive(false);
+    // }
 
     void LoadMenuHub()
     {
