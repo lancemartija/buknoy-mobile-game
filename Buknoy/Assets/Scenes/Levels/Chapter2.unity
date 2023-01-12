@@ -5584,6 +5584,7 @@ GameObject:
   - component: {fileID: 344932291}
   - component: {fileID: 344932290}
   - component: {fileID: 344932288}
+  - component: {fileID: 344932297}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -5770,6 +5771,25 @@ MonoBehaviour:
   TMPFont: {fileID: 11400000, guid: eb79a184817cb5445a7973747ffa3008, type: 2}
   Icon: {fileID: 21300000, guid: bf64ee59614508842afab4a3fef56ec3, type: 3}
   Audio: {fileID: 8300000, guid: f5a72f6c29f0bb84980ca2e38ad374c1, type: 3}
+--- !u!114 &344932297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344932287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 26
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
 --- !u!1 &351716534
 GameObject:
   m_ObjectHideFlags: 0
@@ -95204,7 +95224,7 @@ MonoBehaviour:
   CurrentIDCounter: 32
   json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":31}],"EditorInfo":{"isRoot":true,"xPos":195.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Was
     that a flying book!?","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":176,"yPos":141},"ID":31,"ParamActions":[],"TMPFontGUID":null,"Text":"Good
-    thing it disappeared before I got into the moving platform.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+    thing it disappeared before I got into the moving platform.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -96233,22 +96253,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 31
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":256.5,\"yPos\":-197},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Okay,
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":260.5,\"yPos\":-332},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Okay,
     checkpoint!\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":245,\"yPos\":-95},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"First
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":249,\"yPos\":-230},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"First
     lesson about Lasallian core values is about... faith.\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":252,\"yPos\":10},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It's
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":257,\"yPos\":-125},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"It's
     about our commitment to our Catholic faith story, prayer and the Gospel values.\",\"parentUIDs\":[26],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":29}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":234,\"yPos\":119},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"The
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":29}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":239,\"yPos\":-16},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"The
     Lasallian school nurtures belief in the living presence of God in our world.
     Faith in the presence of God calls all students into a deeper awareness of their
     saving relationship with a caring and loving God and to see the world through
     the \u201Ceyes of faith.\u201D\",\"parentUIDs\":[27],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":222,\"yPos\":229},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":30}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":226,\"yPos\":94},\"ID\":29,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
     core principle is reflected through this Lasallian expression of faith: \u201CLet
     us remember that we are in the Holy Presence of God.\u201D\",\"parentUIDs\":[28],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":215,\"yPos\":339},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh,
-    I see. Wow, I can't wait to learn more about the Lasallian core values!\",\"parentUIDs\":[29],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Buknoy\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":219,\"yPos\":204},\"ID\":30,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Oh,
+    I see. Wow, I can't wait to learn more about the Lasallian core values!\",\"parentUIDs\":[29],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Buknoy\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -97982,7 +98002,19 @@ MonoBehaviour:
   EndConversationFont: {fileID: 11400000, guid: eb79a184817cb5445a7973747ffa3008, type: 2}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &834676467
 Transform:
   m_ObjectHideFlags: 0
@@ -99317,22 +99349,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 26
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":19}],"EditorInfo":{"isRoot":true,"xPos":230.5,"yPos":-336},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Welcome
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":19}],"EditorInfo":{"isRoot":true,"xPos":245.5,"yPos":-76},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Welcome
     to the library!","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"St.
-    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":20}],"EditorInfo":{"isRoot":false,"xPos":234,"yPos":-226},"ID":19,"ParamActions":[],"TMPFontGUID":null,"Text":"Wow,
-    this place is much bigger than I anticipated. Look at those towering bookshelves!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":false,"xPos":244,"yPos":-118},"ID":20,"ParamActions":[],"TMPFontGUID":null,"Text":"This
+    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0.1,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":20}],"EditorInfo":{"isRoot":false,"xPos":249,"yPos":34},"ID":19,"ParamActions":[],"TMPFontGUID":null,"Text":"Wow,
+    this place is much bigger than I anticipated. Look at those towering bookshelves!","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":21}],"EditorInfo":{"isRoot":false,"xPos":259,"yPos":142},"ID":20,"ParamActions":[],"TMPFontGUID":null,"Text":"This
     place is a treasure trove of knowledge. It''s a perfect place to discover more
     about the Lasallian Core Values and, of course, my life and works.","parentUIDs":[19],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"St.
-    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":22}],"EditorInfo":{"isRoot":false,"xPos":218,"yPos":-10},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"So,
-    there are books in the library about you?","parentUIDs":[20],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":23}],"EditorInfo":{"isRoot":false,"xPos":212,"yPos":101},"ID":22,"ParamActions":[],"TMPFontGUID":null,"Text":"Sure,
+    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":22}],"EditorInfo":{"isRoot":false,"xPos":234,"yPos":250},"ID":21,"ParamActions":[],"TMPFontGUID":null,"Text":"So,
+    there are books in the library about you?","parentUIDs":[20],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":23}],"EditorInfo":{"isRoot":false,"xPos":229,"yPos":361},"ID":22,"ParamActions":[],"TMPFontGUID":null,"Text":"Sure,
     there is!","parentUIDs":[21],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"St.
-    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":24}],"EditorInfo":{"isRoot":false,"xPos":209,"yPos":205},"ID":23,"ParamActions":[],"TMPFontGUID":null,"Text":"Tell
+    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":24}],"EditorInfo":{"isRoot":false,"xPos":224,"yPos":465},"ID":23,"ParamActions":[],"TMPFontGUID":null,"Text":"Tell
     you what, along the way up I''ll teach you about the Lasallian Core Values and
     its importance to the society. How''s that?","parentUIDs":[22],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"St.
-    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":25}],"EditorInfo":{"isRoot":false,"xPos":205,"yPos":305},"ID":24,"ParamActions":[],"TMPFontGUID":null,"Text":"That
-    sounds fantastic!","parentUIDs":[23],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":195,"yPos":403},"ID":25,"ParamActions":[],"TMPFontGUID":null,"Text":"Alright
+    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":25}],"EditorInfo":{"isRoot":false,"xPos":220,"yPos":565},"ID":24,"ParamActions":[],"TMPFontGUID":null,"Text":"That
+    sounds fantastic!","parentUIDs":[23],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Buknoy","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":210,"yPos":663},"ID":25,"ParamActions":[],"TMPFontGUID":null,"Text":"Alright
     then, let''s collect those missing pages and learn!","parentUIDs":[24],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"St.
-    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+    John","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":1}]}'
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -99346,6 +99378,7 @@ MonoBehaviour:
   - {fileID: 344932291}
   - {fileID: 344932290}
   - {fileID: 344932288}
+  - {fileID: 344932297}
   ContinueFont: {fileID: 11400000, guid: eb79a184817cb5445a7973747ffa3008, type: 2}
   EndConversationFont: {fileID: 11400000, guid: eb79a184817cb5445a7973747ffa3008, type: 2}
   Event:
@@ -118556,7 +118589,19 @@ MonoBehaviour:
   EndConversationFont: {fileID: 11400000, guid: eb79a184817cb5445a7973747ffa3008, type: 2}
   Event:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &972584008
 Transform:
   m_ObjectHideFlags: 0
@@ -134801,19 +134846,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 31
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":195.5,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yet
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":26}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":227.5,\"yPos\":-125},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Yet
     another checkpoint!\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":184,\"yPos\":124},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Second
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0.1,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":27}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":217,\"yPos\":-23},\"ID\":26,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Second
     lesson about Lasallian core values is about... our Concern for the Poor and Social
     Justice.\",\"parentUIDs\":[0],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":188,\"yPos\":224},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"The
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":28}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":220,\"yPos\":77},\"ID\":27,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"The
     Lasallian school calls its members to an awareness of the poor and victims of
     injustice and responds to their needs through programs of community service,
     advocacy, and justice education.\",\"parentUIDs\":[26],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":173,\"yPos\":338},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":205,\"yPos\":191},\"ID\":28,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"This
     core principle is expressed through the Lasallian ideal: \u201CEnter to Learn,
     Leave to Serve.\u201D\",\"parentUIDs\":[27],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"St.
-    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    John\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
